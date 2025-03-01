@@ -21,7 +21,7 @@ public class SaveNLoadManager : Singleton<SaveNLoadManager>
     char dataSpliter = '\n';
 
     private bool isCorrupted = false;
-    protected virtual void Awake()
+    protected override void Awake()
     {
         base.Awake();
         saveUnits = new HashSet<SaveUnit>();
