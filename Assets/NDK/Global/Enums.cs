@@ -14,4 +14,11 @@ public class Enums
         Unknown = -1,
         StartScene, LobbyScene, GameScene, LoadingScene
     }
+    
+    public enum AudioType
+    {
+        None = -1,
+        
+        Master, SFX, BGM
+    }
 }
