@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectPool<T> where T : Component
 {
     private readonly T prefab;
-    private readonly Queue<T> pool = new Queue<T>();
+    private readonly List<T> pool = new List<T>();
     private readonly Transform parent;
 
     public ObjectPool(T prefab, int initialSize = 10, Transform parent = null)
@@ -16,7 +16,7 @@ public class ObjectPool<T> where T : Component
         for (int i = 0; i < initialSize; i++)
         {
             var obj = CreateNewObject();
-            pool.Enqueue(obj);
+            pool.Add(obj);
         }
     }
 
@@ -29,24 +29,31 @@ public class ObjectPool<T> where T : Component
 
     public T Get(Vector3 position, Quaternion rotation)
     {
-        T obj;
-        if (pool.Count > 0)
+        // 비활성화된 오브젝트를 우선적으로 찾음
+        foreach (var obj in pool)
         {
-            obj = pool.Dequeue();
-        }
-        else
-        {
-            obj = CreateNewObject();
+            if (!obj.gameObject.activeInHierarchy)
+            {
+                PrepareObject(obj, position, rotation);
+                return obj;
+            }
         }
 
+        // 비활성화된 오브젝트가 없다면 새 오브젝트 생성
+        T newObj = CreateNewObject();
+        pool.Add(newObj);
+        PrepareObject(newObj, position, rotation);
+        return newObj;
+    }
+
+    private void PrepareObject(T obj, Vector3 position, Quaternion rotation)
+    {
         obj.transform.SetPositionAndRotation(position, rotation);
         obj.gameObject.SetActive(true);
-        return obj;
     }
 
     public void Release(T obj)
     {
         obj.gameObject.SetActive(false);
-        pool.Enqueue(obj);
     }
 }

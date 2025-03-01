@@ -270,8 +270,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalStages: 3
-  stageTime: 150
-  restTime: 20
   timerText: {fileID: 2130238194}
   monsterSpawner: {fileID: 52888716741963793}
 --- !u!1 &2024164118
@@ -342,11 +340,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2028729278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2012256501213493220, guid: 27f13b64f0b278643ae81d741aff9adf, type: 3}
+  m_PrefabInstance: {fileID: 1833197736474507789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2028729281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4629351245935023350, guid: 27f13b64f0b278643ae81d741aff9adf, type: 3}
   m_PrefabInstance: {fileID: 1833197736474507789}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &2028729283
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028729278}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1}
+  m_Direction: 0
 --- !u!1 &2130238192
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +605,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle
       objectReference: {fileID: 0}
+    - target: {fileID: 2012256501213493220, guid: 27f13b64f0b278643ae81d741aff9adf, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012256501213493220, guid: 27f13b64f0b278643ae81d741aff9adf, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070673554057235546, guid: 27f13b64f0b278643ae81d741aff9adf, type: 3}
+      propertyPath: magicBullet
+      value: 
+      objectReference: {fileID: 4776722140311827255, guid: 6403a12cf286abf4d82cfd1a2b11bcf5, type: 3}
     - target: {fileID: 4629351245935023350, guid: 27f13b64f0b278643ae81d741aff9adf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -607,10 +657,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5502341555385371680, guid: 27f13b64f0b278643ae81d741aff9adf, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654593497115248956, guid: 27f13b64f0b278643ae81d741aff9adf, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654593497115248956, guid: 27f13b64f0b278643ae81d741aff9adf, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2012256501213493220, guid: 27f13b64f0b278643ae81d741aff9adf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2028729283}
   m_SourcePrefab: {fileID: 100100000, guid: 27f13b64f0b278643ae81d741aff9adf, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

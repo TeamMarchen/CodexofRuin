@@ -26,7 +26,6 @@ public class MonsterSpawner: MonoBehaviour
 
     private void Start()
     {
-        // 오브젝트 풀 초기화
         monsterPool = new ObjectPool<Monster>(monsterPrefab, initialSpawnCount * 10, transform);
     }
 
@@ -37,10 +36,8 @@ public class MonsterSpawner: MonoBehaviour
         isSpawning = true;
         currentSpawnCount = initialSpawnCount;
 
-        // 초기 스폰
         SpawnMonsters(currentSpawnCount);
 
-        // 스폰 코루틴 시작
         spawnCoroutine = StartCoroutine(SpawnRoutine());
         increaseSpawnCoroutine = StartCoroutine(IncreaseSpawnCountRoutine());
     }

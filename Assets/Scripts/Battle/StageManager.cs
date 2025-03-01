@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class StageManager : MonoBehaviour
+public class StageManager : Singleton<StageManager>
 {
     [Header("Stage Settings")]
     public int totalStages = 3;
-    public float stageTime = 150f;
-    public float restTime = 20f;
+    private float STAGETIME = 150f;
+    private float RESTTIME = 20f;
 
     [Header("UI")]
     public TextMeshProUGUI timerText;
@@ -32,9 +32,11 @@ public class StageManager : MonoBehaviour
             currentStage++;
             Debug.Log($"Stage {currentStage} 시작!");
 
+            yield return new WaitForSeconds(0.3f);
+
             monsterSpawner.StartSpawning();
 
-            remainingTime = stageTime;
+            remainingTime = STAGETIME;
             while (remainingTime > 0)
             {
                 remainingTime -= Time.deltaTime;
@@ -47,8 +49,8 @@ public class StageManager : MonoBehaviour
             monsterSpawner.ClearAllMonsters();
 
             isResting = true;
-            Debug.Log($"휴식 시간 시작: {restTime}초");
-            yield return new WaitForSeconds(restTime);
+            Debug.Log($"휴식 시간 시작: {RESTTIME}초");
+            yield return new WaitForSeconds(RESTTIME);
             isResting = false;
         }
 
