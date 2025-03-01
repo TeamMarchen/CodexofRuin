@@ -8,4 +8,10 @@ public class Enums
         
         EMax
     }
+    
+    public enum SceneType
+    {
+        Unknown = -1,
+        StartScene, LobbyScene, GameScene, LoadingScene
+    }
 }

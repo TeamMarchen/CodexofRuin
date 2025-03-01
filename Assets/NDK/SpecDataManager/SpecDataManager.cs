@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecDataManager : MonoBehaviour
+public class SpecDataManager : Singleton<SpecDataManager>
 {
     private List<Dictionary<string, SpecDataSO>> _specDatas;
     public bool isLoaded { private set; get; } = false;
     
-    protected void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         Init();
     }
 
