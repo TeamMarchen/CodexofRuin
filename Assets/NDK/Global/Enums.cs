@@ -2,7 +2,7 @@ public class Enums
 {
     public enum SPEC_DATA_TYPE
     {
-        NONE = 0,
+        NONE = 0, BossData, CharacterData, FederationData, FederationSkill, MonsterData, PlayerSkill, StageData,
         // None=0,CharacterSpecData, IngameLevelData, OutGameGradeData, StageInfo, AchievementInfo,EquipmentLevelData,
         // Skill,UpgradeSpecDataSO, SkinData,  
         

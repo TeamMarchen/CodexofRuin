@@ -24,6 +24,13 @@ public class GoogleSheetToSO : EditorWindow
         // 초기화
         _makers = new List<SpecDataSOMaker>((int)Enums.SPEC_DATA_TYPE.EMax);
         _makers.Add(null);
+        _makers.Add(new BossDataSOMaker());
+        _makers.Add(new CharacterDataSOMaker());
+        _makers.Add(new FederationDataSOMaker());
+        _makers.Add(new FederationSkillSOMaker());
+        _makers.Add(new MonsterDataSOMaker());
+        _makers.Add(new PlayerSkillSOMaker());
+        _makers.Add(new StageDataSOMaker());
         // _makers.Add(new CharacterDataSOMaker());
         // _makers.Add(new IngameLevelDataSOMaker());
         // _makers.Add(new OutGameGradeDataSOMaker());
