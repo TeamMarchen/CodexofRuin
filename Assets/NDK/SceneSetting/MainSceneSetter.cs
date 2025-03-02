@@ -13,12 +13,10 @@ public class MainSceneSetter : SceneSetter {
             Debug.Log(itemDataSo.itemName);
         }
 
-        var data = SpecDataManager.Instance.GetDataList<ItemDataSO>();
-        foreach (KeyValuePair<int,SpecDataSO> keyValuePair in data)
+        var data = SpecDataManager.Instance.GetDataDictionary<ItemDataSO>();
+        foreach (KeyValuePair<int,ItemDataSO> keyValuePair in data)
         {
-            ItemDataSO test = keyValuePair.Value as ItemDataSO;
-            
-            Debug.Log($"{test.itemName} {test.description}");
+            Debug.Log($"{keyValuePair.Value.itemName} {keyValuePair.Value.description}");
         }
     }
 }

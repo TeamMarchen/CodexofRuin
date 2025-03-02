@@ -75,13 +75,20 @@ public class SpecDataManager : Singleton<SpecDataManager>
         return isExist;
     }
 
-    public IReadOnlyDictionary<int,SpecDataSO> GetDataList<T>() where T : SpecDataSO
+    // 자주 호출 금지....
+    public IReadOnlyDictionary<int,T> GetDataDictionary<T>() where T : SpecDataSO
     {
         if(!isLoaded)
             Init();
         Type t = typeof(T);
         Enums.SPEC_DATA_TYPE specDataType = GetSpecDataType(t);
-        return _specDatas[(int)specDataType];
+        Dictionary<int, T> returnDic = new Dictionary<int, T>();
+        foreach (KeyValuePair<int, SpecDataSO> keyValue in _specDatas[(int)specDataType])
+        {
+            returnDic.Add(keyValue.Key,keyValue.Value as T);
+        }
+
+        return returnDic;
     }
 
     private Enums.SPEC_DATA_TYPE GetSpecDataType(Type t)

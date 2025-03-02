@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="715cf415-4136-4f76-8bdc-211ae9815888" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NDK/Global/Const.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/Global/Const.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/GoogleSheetToSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/GoogleSheetToSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneSetting/MainSceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/MainSceneSetter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,7 @@
       <updated>1740831239093</updated>
       <workItem from="1740831240161" duration="3369000" />
       <workItem from="1740834748866" duration="941000" />
-      <workItem from="1740881707560" duration="8094000" />
+      <workItem from="1740881707560" duration="8831000" />
     </task>
     <servers />
   </component>
