@@ -32,7 +32,7 @@ namespace Player
         private ObjectPool<MagicBullet> magicBulletPool;
         private bool isSkillFirOnCooldown = false;
         private float skillFirCooldownTime = 15f;
-        private float remainingFirCooldownTime = 0f;
+        public float remainingFirCooldownTime = 0f;
         private float skillSecCooldownTime = 15f;
         private float remainingSecCooldownTime = 0f;
         private Coroutine attackCoroutine;
@@ -42,16 +42,14 @@ namespace Player
             skillFirCooldownFill = skillFirCool;
             skillSecCooldownFill = skillSecCool;
             skillThrCooldownFill = skillThrCool;
-            healthBarFill = hp;
-        }
-
-        private void Awake()
-        {
+            
+            skillThrCooldownFill.fillAmount = 0f;
             moveSpeed = PlayerStatus.Instance.speed;
             magicBulletPool = new ObjectPool<MagicBullet>(magicBullet, 5, transform);
             rb = GetComponent<Rigidbody2D>();
             attackCoroutine = StartCoroutine(AutoAttackRoutine());
-            Debug.Log("어택 시작");
+
+            healthBarFill = hp;
         }
 
         private void Update()
@@ -113,7 +111,7 @@ namespace Player
 
         private IEnumerator SkillFir()
         {
-            if(PlayerStatus.Instance.level >= 3){
+            if(PlayerStatus.Instance.level >= 1){
                 if (isSkillFirOnCooldown) yield break;
 
                 if (PlayerStatus.Instance.curruntMp < 20)
@@ -162,15 +160,13 @@ namespace Player
                     UpdateSecSkillCooldownUI();
                     yield return null;
                 }
-
+                yield return new WaitForSeconds(13f);
                 isSkillFirOnCooldown = false;
             }
         }
 
         private IEnumerator SkillThr()
         {
-            if (isSkillFirOnCooldown) yield break;
-
             if (skillThrCooldownFill.fillAmount != 1)
             {
                 skillThrCooldownFill.fillAmount = 1;
@@ -196,28 +192,15 @@ namespace Player
         {
             if (skillFirCooldownFill != null)
             {
-                if (isSkillFirOnCooldown)
-                {
-                    skillFirCooldownFill.fillAmount = remainingFirCooldownTime / skillFirCooldownTime;
-                }
-                else
-                {
-                    skillFirCooldownFill.fillAmount = 0f;
-                }
+                Debug.Log(skillFirCooldownFill.fillAmount);
+                skillFirCooldownFill.fillAmount = remainingFirCooldownTime / skillFirCooldownTime;
             }
         }
         private void UpdateSecSkillCooldownUI()
         {
             if (skillSecCooldownFill != null)
             {
-                if (isSkillFirOnCooldown)
-                {
-                    skillSecCooldownFill.fillAmount = remainingSecCooldownTime / skillSecCooldownTime;
-                }
-                else
-                {
-                    skillSecCooldownFill.fillAmount = 0f;
-                }
+                skillSecCooldownFill.fillAmount = remainingSecCooldownTime / skillSecCooldownTime;
             }
         }
 
