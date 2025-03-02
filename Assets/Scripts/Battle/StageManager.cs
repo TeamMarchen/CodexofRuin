@@ -116,8 +116,6 @@ public class StageManager : Singleton<StageManager>
 
     private IEnumerator StageRoutine()
     {
-        while (currentStage < totalStages && !isStageFailed)
-        {
             currentStage++;
             killedMonsters = 0;
             bossDefeated = false;
@@ -171,13 +169,11 @@ public class StageManager : Singleton<StageManager>
                 Instantiate(badEnd, new Vector3(0, 0, 0), Quaternion.identity);
                 yield return new WaitForSeconds(1f);
                 SceneManager.LoadScene("StartScene");
-                break;
             }
 
             isResting = true;
             yield return new WaitForSeconds(RESTTIME);
             isResting = false;
-        }
 
         if (!isStageFailed)
         {

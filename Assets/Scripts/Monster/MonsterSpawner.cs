@@ -187,7 +187,10 @@ public class MonsterSpawner : MonoBehaviour
 
         if (killedMonsters >= maxMonsters)
         {
-            SpawnBoss();
+            if (!bossSpawned)
+            {
+                SpawnBoss();
+            }
         }
     }
 
