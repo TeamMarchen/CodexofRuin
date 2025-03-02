@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: 101
   m_EditorClassIdentifier: 
   id: 101
-  characterName: Kang Mujin
+  characterName: Bai Hayeon
   faction: Korean Alliance
-  role: Guardian
-  level: 30
-  maxHP: 3000
-  attack: 200
-  defense: 150
-  maxMP: 500
+  role: Sage
+  level: 28
+  maxHP: 2800
+  attack: 180
+  defense: 140
+  maxMP: 600
+  imagePath: "_EarthCH\r"

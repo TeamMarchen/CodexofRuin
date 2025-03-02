@@ -6,22 +6,13 @@ public class MonsterSpawner : MonoBehaviour
 {
     [Header("Spawn Settings")]
     private GameObject player;
-    public float minRadius = 5f;
-    public float maxRadius = 10f;
-
-    [Header("Monster Prefabs")]
-    public List<Monster> monsterPrefabs;
-    public Monster bossPrefab;
-
-    private Dictionary<Monster, int> monsterSpawnCount = new Dictionary<Monster, int>();
-    private ObjectPool<Monster> monsterPool;
+    public float minRadius = 10f;
+    public float maxRadius = 15f;
 
     [Header("Spawning Parameters")]
-    public int initialSpawnCount = 10;
-    public float spawnInterval = 2f;
-    public float spawnIncreaseInterval = 10f;
-
-    private int currentSpawnCount;
+    public float spawnInterval = 1f;
+    public float spawnIncreaseInterval = 5f;
+    private int currentSpawnCount = 1;
     private int totalSpawnedMonsters = 0;
     private int killedMonsters = 0;
 
@@ -42,16 +33,19 @@ public class MonsterSpawner : MonoBehaviour
     public delegate void StageClearHandler();
     public event StageClearHandler OnStageClear;
 
-    public void Initialize(GameObject playerObject, List<int> monsterIdList, IReadOnlyDictionary<int, MonsterDataSO> monsterDataSos_, CharacterDataSO characterDataSO)
+    private IReadOnlyDictionary<int, MonsterDataSO> monsterDataSos;
+    private List<int> monsterIdList;
+    private CharacterDataSO bossDataSO;
+
+    public void Initialize(GameObject playerObject, List<int> monsterIdList, int[] spawnCount,
+        IReadOnlyDictionary<int, MonsterDataSO> monsterDataSos_, CharacterDataSO characterDataSO, int maxSpawnCount)
     {
         player = playerObject;
-        monsterPool = new ObjectPool<Monster>(bossPrefab, maxMonsters + 1, transform);
+        maxMonsters = maxSpawnCount;
 
-        monsterSpawnCount.Clear();
-        foreach (var prefab in monsterPrefabs)
-        {
-            monsterSpawnCount[prefab] = maxMonsters / monsterPrefabs.Count;
-        }
+        this.monsterIdList = monsterIdList;
+        monsterDataSos = monsterDataSos_;
+        bossDataSO = characterDataSO;
     }
 
     public void StartSpawning()
@@ -59,9 +53,8 @@ public class MonsterSpawner : MonoBehaviour
         if (isSpawning) return;
 
         isSpawning = true;
-        currentSpawnCount = initialSpawnCount;
-
-        SpawnMonsters(currentSpawnCount);
+        totalSpawnedMonsters = 0;
+        killedMonsters = 0;
 
         spawnCoroutine = StartCoroutine(SpawnRoutine());
         increaseSpawnCoroutine = StartCoroutine(IncreaseSpawnCountRoutine());
@@ -106,32 +99,48 @@ public class MonsterSpawner : MonoBehaviour
         while (isSpawning && !bossSpawned)
         {
             yield return new WaitForSeconds(spawnIncreaseInterval);
-            currentSpawnCount = Mathf.Min(currentSpawnCount + 10, maxMonsters - totalSpawnedMonsters);
+            currentSpawnCount += 5;
         }
     }
 
     private void SpawnMonsters(int count)
     {
-        int spawnCount = Mathf.Min(count, maxMonsters - totalSpawnedMonsters);
+        if (monsterIdList.Count == 0) return;
 
-        foreach (var prefab in monsterPrefabs)
+        int monsterId = monsterIdList[0];
+        if (!monsterDataSos.TryGetValue(monsterId, out MonsterDataSO monsterData))
         {
-            int maxSpawnForType = Mathf.Min(spawnCount, monsterSpawnCount[prefab]);
+            Debug.LogError($"몬스터 데이터가 존재하지 않습니다: ID {monsterId}");
+            return;
+        }
 
-            for (int i = 0; i < maxSpawnForType; i++)
+        GameObject prefab = Resources.Load<GameObject>($"Prefebs/Monsters/{monsterData.monsterName}");
+        if (prefab == null)
+        {
+            Debug.LogError($"몬스터 프리팹을 찾을 수 없습니다: {monsterData.monsterName}");
+            return;
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            Vector3 spawnPosition = GetRandomSpawnPosition();
+            GameObject monsterObject = Instantiate(prefab, spawnPosition, Quaternion.identity, transform);
+            Monster monster = monsterObject.GetComponent<Monster>();
+            MonsterData monData = new MonsterData(1, monsterData.name, monsterData.maxHp,1f,0,0, monsterData.attack,null,10, monsterData.defense);
+            if (monster == null)
             {
-                Vector3 spawnPosition = GetRandomSpawnPosition();
-                Monster monster = monsterPool.Get(spawnPosition, Quaternion.identity);
-                monster.Initialize(GetMonsterData(prefab), player.transform);
+                Debug.LogError($"Monster 컴포넌트를 찾을 수 없습니다: {monsterData.name}");
+                Destroy(monsterObject);
+                continue;
+            }
 
-                monster.OnMonsterKilled += HandleMonsterKilled;
-                totalSpawnedMonsters++;
-                monsterSpawnCount[prefab]--;
+            monster.Initialize(monData, player.transform);
+            monster.OnMonsterKilled += HandleMonsterKilled;
+            totalSpawnedMonsters++;
 
-                if (totalSpawnedMonsters >= maxMonsters)
-                {
-                    return;
-                }
+            if (totalSpawnedMonsters >= maxMonsters)
+            {
+                return;
             }
         }
     }
@@ -139,11 +148,28 @@ public class MonsterSpawner : MonoBehaviour
     private void SpawnBoss()
     {
         bossSpawned = true;
-        Vector3 spawnPosition = GetRandomSpawnPosition();
-        Monster boss = monsterPool.Get(spawnPosition, Quaternion.identity);
-        boss.Initialize(GetBossData(), player.transform);
+        ClearAllMonsters();
 
-        boss.OnMonsterKilled += HandleBossKilled;
+        GameObject prefab = Resources.Load<GameObject>($"Prefebs/Monster/{bossDataSO.name}");
+        if (prefab == null)
+        {
+            Debug.LogError($"보스 몬스터 프리팹을 찾을 수 없습니다: {bossDataSO.name}");
+            return;
+        }
+
+        Vector3 spawnPosition = GetRandomSpawnPosition();
+        GameObject bossObject = Instantiate(prefab, spawnPosition, Quaternion.identity, transform);
+        Boss boss = bossObject.GetComponent<Boss>();
+        if (boss == null)
+        {
+            Debug.LogError($"Boss 컴포넌트를 찾을 수 없습니다: {bossDataSO.name}");
+            Destroy(bossObject);
+            return;
+        }
+        MonsterData bossData = new MonsterData(bossDataSO.level, bossDataSO.name, bossDataSO.maxHP, 2f,1f,5f, bossDataSO.attack, null,100, bossDataSO.defense);
+        boss.Initialize(bossData, player.transform);
+        boss.OnBossKilled += HandleBossKilled;
+        Debug.Log("보스 몬스터가 스폰되었습니다!");
     }
 
     private Vector3 GetRandomSpawnPosition()
@@ -153,46 +179,21 @@ public class MonsterSpawner : MonoBehaviour
         return player.transform.position + (Vector3)randomDirection * randomDistance;
     }
 
-    private MonsterData GetMonsterData(Monster prefab)
-    {
-        return new MonsterData(
-            level: 1,
-            name : "DiDi",
-            hp: 50f,
-            speed: 2f,
-            attackTime: 1f,
-            attackRange: 1.5f,
-            baseDamage: 10f,
-            dropItemID: new List<string> { "item_01" },
-            exp: 10
-        );
-    }
-
-    private MonsterData GetBossData()
-    {
-        return new MonsterData(
-            level: 10,
-            name: "DiDi",
-            hp: 1000f,
-            speed: 1f,
-            attackTime: 2f,
-            attackRange: 2.5f,
-            baseDamage: 50f,
-            dropItemID: new List<string> { "boss_item_01" },
-            exp: 500
-        );
-    }
-
     private void HandleMonsterKilled(Monster monster)
     {
         killedMonsters++;
-        monsterPool.Release(monster);
+        Destroy(monster.gameObject);
         OnMonsterKilled?.Invoke();
+
+        if (killedMonsters >= maxMonsters)
+        {
+            SpawnBoss();
+        }
     }
 
-    private void HandleBossKilled(Monster boss)
+    private void HandleBossKilled(Boss boss)
     {
-        monsterPool.Release(boss);
+        Destroy(boss.gameObject);
         OnBossKilled?.Invoke();
         OnStageClear?.Invoke();
         StopSpawning();
@@ -203,7 +204,7 @@ public class MonsterSpawner : MonoBehaviour
         Monster[] activeMonsters = GetComponentsInChildren<Monster>();
         foreach (var monster in activeMonsters)
         {
-            monsterPool.Release(monster);
+            Destroy(monster.gameObject);
         }
     }
 }

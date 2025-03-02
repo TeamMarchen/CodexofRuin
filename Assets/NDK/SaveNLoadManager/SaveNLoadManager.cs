@@ -17,7 +17,7 @@ public class SaveNLoadManager : Singleton<SaveNLoadManager>
     char nameSpliter = '|';
     char dataSpliter = '\n';
 
-    private bool isCorrupted = false;
+   
     protected override void Awake()
     {
         base.Awake();
@@ -141,7 +141,6 @@ public class SaveNLoadManager : Singleton<SaveNLoadManager>
                 string[] strIntegrityCheckSplit = encrypdata.Split("?");
                 if (strIntegrityCheckSplit.Length != 3)
                 {
-                    isCorrupted = true;
                     Debug.LogWarning("데이터의 이상");
                 }
                 else
@@ -160,14 +159,12 @@ public class SaveNLoadManager : Singleton<SaveNLoadManager>
                     }
                     else
                     {
-                        isCorrupted = true;
                         Debug.LogWarning("데이터의 이상");
                     }
                 }
             }
             else
             {
-                isCorrupted = true;
                 Debug.LogWarning("데이터의 이상");
             }
         }

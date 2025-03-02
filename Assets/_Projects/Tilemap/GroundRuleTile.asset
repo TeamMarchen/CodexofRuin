@@ -9,15 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b338ac120ec4e49aa446032d2a34cd2, type: 3}
-  m_Name: 106
+  m_Script: {fileID: 11500000, guid: 55f747e8af38fbe4d8819f37be6fd5aa, type: 3}
+  m_Name: GroundRuleTile
   m_EditorClassIdentifier: 
-  id: 106
-  characterName: Eric Johnson
-  faction: American Alliance
-  role: Gunslinger
-  level: 32
-  maxHP: 3200
-  attack: 240
-  defense: 150
-  maxMP: 480
+  m_DefaultSprite: {fileID: 21300000, guid: 1ac60cb011aad9348ad9d4e7b19e80b1, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_TilingRules: []
+  m_FlatTop: 0

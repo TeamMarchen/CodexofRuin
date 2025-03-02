@@ -7,4 +7,5 @@ public class MonsterDataSO : SpecDataSO
     public int attack;
     public int defense;
     public int maxMP;
+    public string ImagePath;
 }

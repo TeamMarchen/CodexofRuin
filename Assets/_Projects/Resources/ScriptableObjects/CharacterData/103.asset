@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: 103
   m_EditorClassIdentifier: 
   id: 103
-  characterName: Ryu Feng
-  faction: Chinese Alliance
-  role: Martial Artist
-  level: 32
-  maxHP: 3200
-  attack: 220
-  defense: 160
-  maxMP: 450
+  characterName: Yamato Ken
+  faction: Japanese Alliance
+  role: Samurai
+  level: 30
+  maxHP: 3100
+  attack: 210
+  defense: 155
+  maxMP: 470
+  imagePath: "_WaterCH\r"

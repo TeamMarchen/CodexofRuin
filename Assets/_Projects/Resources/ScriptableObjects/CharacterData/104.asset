@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: 104
   m_EditorClassIdentifier: 
   id: 104
-  characterName: Yamato Ken
-  faction: Japanese Alliance
-  role: Samurai
-  level: 30
-  maxHP: 3100
-  attack: 210
-  defense: 155
-  maxMP: 470
+  characterName: Alexander
+  faction: European Alliance
+  role: Paladin
+  level: 35
+  maxHP: 3500
+  attack: 230
+  defense: 170
+  maxMP: 520
+  imagePath: "_DarkCH\r"

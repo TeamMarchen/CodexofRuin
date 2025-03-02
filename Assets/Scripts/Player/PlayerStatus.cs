@@ -13,25 +13,31 @@ public class PlayerStatus : Singleton<PlayerStatus>,IStatus
     public float speed { get; set; }
     public float attackTime { get; set; }
     public float attackRange { get; set; }
+    public float extraAttackPower { get; set; }
     public float baseDamage { get; set; }
+    public float defense { get; set; }
     public int curruntExp { get; set; }
     public int maxExp { get; set; }
 
     private IReadOnlyDictionary<int, PlayerDataSO> levelUpData;
 
-    private void Initialize(IReadOnlyDictionary<int, PlayerDataSO> playerDataSos_)
+    public void Initialize(IReadOnlyDictionary<int, PlayerDataSO> playerDataSos_)
     {
         level = playerDataSos_[1001].level;
         playerName = playerDataSos_[1001].name;
         hp = playerDataSos_[1001].hp;
+        speed = 3f;
         curruntHp = hp;
         baseDamage = playerDataSos_[1001].attack;
+        extraAttackPower = 0;
         mp = playerDataSos_[1001].mp;
         curruntMp = mp;
         attackTime = 0.5f;
         curruntExp = 0;
         maxExp = 1000;
+        defense = playerDataSos_[1001].defense;
         levelUpData = playerDataSos_;
+        Debug.Log("초기화");
     }
 
     public void LevelUp()
@@ -45,7 +51,8 @@ public class PlayerStatus : Singleton<PlayerStatus>,IStatus
         curruntMp = mp;
         attackTime = 0.5f;
         curruntExp = 0;
-        maxExp = 1000;
+        defense = levelUpData[1001 + level].defense;
         level = levelUpData[1001 + level].level;
+        maxExp = level * 2 *1000;
     }
 }

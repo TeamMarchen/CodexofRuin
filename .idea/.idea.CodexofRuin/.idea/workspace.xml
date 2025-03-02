@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715cf415-4136-4f76-8bdc-211ae9815888" name="변경" comment="" />
+    <list default="true" id="715cf415-4136-4f76-8bdc-211ae9815888" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Projects/Tilemap/GroundRuleTile.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Projects/Tilemap/riverRuleTile.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Projects/Tilemap/riverRuleTile.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Projects/Tilemap/산악지대/CH1_Grass1png.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Projects/Tilemap/산악지대/CH1_Grass1png.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/GameWatcher.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Projects/Tilemap/GroundRuleTile.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/GameWatcher/GameWatcher.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/GameWatcher/GameWatcher.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/Prefab/Map1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/Prefab/Map1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SaveNLoadManager/SaveNLoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SaveNLoadManager/SaveNLoadManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneSetting/BattleSceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/BattleSceneSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefebs/Monsters/Bai Hayeon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefebs/Monsters/Bai Hayeon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefebs/Monsters/DiDi.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefebs/Monsters/DiDi.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefebs/Monsters/Ridi.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefebs/Monsters/Ridi.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/BattlePrefeb/Monster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/BattlePrefeb/Monster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/BattlePrefeb/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/BattlePrefeb/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Projects/Tilemap/New Palette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Projects/Tilemap/New Palette.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Projects/Tilemap/forestRuleTile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Projects/Tilemap/forestRuleTile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,17 +155,17 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataManager.cs</url>
-          <line>32</line>
-          <properties documentPath="I:\Github\CodexofRuin\Assets\NDK\SpecDataManager\SpecDataManager.cs" containingFunctionPresentation="메서드 'InitData'">
+          <url>file://$PROJECT_DIR$/Assets/NDK/SceneSetting/BattleSceneSetter.cs</url>
+          <line>21</line>
+          <properties documentPath="I:\Github\CodexofRuin\Assets\NDK\SceneSetting\BattleSceneSetter.cs" containingFunctionPresentation="메서드 'Start'">
             <startOffsets>
-              <option value="885" />
+              <option value="684" />
             </startOffsets>
             <endOffsets>
-              <option value="977" />
+              <option value="756" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

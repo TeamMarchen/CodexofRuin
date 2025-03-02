@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: 105
   m_EditorClassIdentifier: 
   id: 105
-  characterName: Alexander
-  faction: European Alliance
-  role: Paladin
-  level: 35
-  maxHP: 3500
-  attack: 230
-  defense: 170
-  maxMP: 520
+  characterName: Eric Johnson
+  faction: American Alliance
+  role: Gunslinger
+  level: 32
+  maxHP: 3200
+  attack: 240
+  defense: 150
+  maxMP: 480
+  imagePath: _WindCH

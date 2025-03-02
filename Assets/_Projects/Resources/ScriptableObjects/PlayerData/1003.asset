@@ -19,3 +19,4 @@ MonoBehaviour:
   attack: 140
   defense: 70
   mp: 240
+  playerImagePath: "_Player\r"

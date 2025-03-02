@@ -1,6 +1,8 @@
+using Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
@@ -8,6 +10,9 @@ public class Monster : MonoBehaviour
     [SerializeField]
     private Transform target;
     private SpriteRenderer spriteRenderer;
+
+    [Header("Health Bar Settings")]
+    public Image healthBarFill;
 
     private float damageCooldown = 1f;
     private float lastDamageTime = 0f;
@@ -17,11 +22,12 @@ public class Monster : MonoBehaviour
     public delegate void MonsterKilledHandler(Monster monster);
     public event MonsterKilledHandler OnMonsterKilled;
 
-    public void Initialize(MonsterData monsterData, Transform playerTarget, bool isBoss = false)
+    public void Initialize(MonsterData monsterData, Transform playerTarget)
     {
         data = monsterData;
         target = playerTarget;
-        IsBoss = isBoss;
+        data.hp = monsterData.hp; // 체력을 초기화
+        UpdateHealthBar();
     }
 
     private void Awake()
@@ -44,6 +50,8 @@ public class Monster : MonoBehaviour
 
         Vector3 direction = (target.position - transform.position).normalized;
         transform.Translate(direction * data.speed * Time.deltaTime, Space.World);
+
+        UpdateHealthBar();
     }
 
     public void TakeDamage(float damage)
@@ -53,13 +61,22 @@ public class Monster : MonoBehaviour
         {
             Die();
         }
+        UpdateHealthBar();
     }
 
     private void Die()
     {
         gameObject.SetActive(false);
-
+        PlayerStatus.Instance.curruntExp += 30;
         OnMonsterKilled?.Invoke(this);
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (healthBarFill != null)
+        {
+            healthBarFill.fillAmount = data.curruntHp / data.hp;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

@@ -15,6 +15,7 @@ public class PlayerDataSOMaker : SpecDataSOMaker
         playerDataSo.attack = int.Parse(data[4]);
         playerDataSo.defense = int.Parse(data[5]);
         playerDataSo.mp = int.Parse(data[6]);
+        playerDataSo.playerImagePath = data[7];
 
         return playerDataSo;
     }

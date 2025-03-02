@@ -24,7 +24,6 @@ public class ObjectPool<T> where T : Component
     {
         T newObj = Object.Instantiate(prefab);
 
-        // 인스턴스화 후에 부모를 설정
         newObj.transform.SetParent(parent, false);
         newObj.gameObject.SetActive(false);
         return newObj;
