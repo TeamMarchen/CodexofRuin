@@ -111,7 +111,7 @@ MonoBehaviour:
   healthBarFill: {fileID: 0}
   manaBarFill: {fileID: 0}
   skillCooldownFill: {fileID: 0}
-  magicBullet: {fileID: 4776722140311827255, guid: 6403a12cf286abf4d82cfd1a2b11bcf5, type: 3}
+  magicBullet: {fileID: 3912983344491700984, guid: 6403a12cf286abf4d82cfd1a2b11bcf5, type: 3}
   fireSkill: {fileID: 9070047202716592071}
 --- !u!50 &2236904773677605390
 Rigidbody2D:

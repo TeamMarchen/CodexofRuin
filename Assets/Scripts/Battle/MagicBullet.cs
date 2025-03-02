@@ -10,12 +10,12 @@ public enum State
 
 public class MagicBullet : MonoBehaviour
 {
-    
     private float speed = 10f;
     private Vector2 direction;
     private float damage;
     private State state = State.Single;
     private float range = 1f;
+    public Animator animator;
 
     private void Awake()
     {
@@ -29,6 +29,8 @@ public class MagicBullet : MonoBehaviour
 
     public void Initialize(Vector2 shootDirection, float damageAmount, State state)
     {
+        animator = GetComponent<Animator>();
+        speed = 10f;
         direction = shootDirection.normalized;
         damage = damageAmount;
         gameObject.SetActive(true);
@@ -44,15 +46,20 @@ public class MagicBullet : MonoBehaviour
     {
         if (state == State.Single && collision.CompareTag("Monster"))
         {
+            speed = 0;
+            animator.SetTrigger("Hit");
             Monster monster = collision.GetComponent<Monster>();
             if (monster != null)
             {
                 monster.TakeDamage(damage);
             }
-            gameObject.SetActive(false);
+            damage = 0;
+            StartCoroutine(DeactivateAfterDelay(0.5f));
         }
         else if (state == State.Range && collision.CompareTag("Monster"))
         {
+            speed = 0;
+            animator.SetTrigger("Hit");
             Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, range);
             foreach (Collider2D hitCollider in hitColliders)
             {
@@ -65,7 +72,14 @@ public class MagicBullet : MonoBehaviour
                     }
                 }
             }
-            gameObject.SetActive(false);
+            damage = 0;
+            StartCoroutine(DeactivateAfterDelay(0.5f));
         }
+    }
+
+    private IEnumerator DeactivateAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameObject.SetActive(false);
     }
 }
