@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class SceneSetter : MonoBehaviour
 {
-    protected static bool IsSingletonInitialze;
+    private static bool IsSingletonInitialze=false;
 
     protected virtual void Start()
     {
@@ -19,6 +19,11 @@ public abstract class SceneSetter : MonoBehaviour
     {
         SpecDataManager.Instance.Init();
         SoundManager.Instance.GetAudio += ResourceManager.Instance.LoadResource<AudioClip>;
-        
+        IsSingletonInitialze = true;
+    }
+
+    public void MoveScene(Enums.SCENE_TYPE sceneType_)
+    {
+        SceneManagerEx.Instance.LoadScene(sceneType_);
     }
 }

@@ -12,7 +12,7 @@ public class Enums
     public enum SCENE_TYPE
     {
         Unknown = -1,
-        START_SCENE, LobbyScene, GameScene, LoadingScene
+        MainScene, LobbyScene, BattleScene, LoadingScene
     }
     
     public enum AUDIO_TYPE
