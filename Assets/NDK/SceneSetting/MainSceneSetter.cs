@@ -16,7 +16,7 @@ public class MainSceneSetter : SceneSetter {
         {
             mainSceneUI.Init(() =>
             {
-                MoveScene(Enums.SCENE_TYPE.LobbyScene);
+                
             });
         }
     }
