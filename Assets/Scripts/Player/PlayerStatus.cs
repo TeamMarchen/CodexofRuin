@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class PlayerStatus : Singleton<PlayerStatus>,IStatus
+public class  PlayerStatus : Singleton<PlayerStatus>,IStatus
 {
     public int level { get; set; }
     public string playerName { get; set; }
