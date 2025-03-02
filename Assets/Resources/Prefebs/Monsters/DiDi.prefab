@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6824892639368501441}
   - component: {fileID: 3929607826942442543}
   m_Layer: 7
-  m_Name: Didi
+  m_Name: DiDi
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &3929607826942442543
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

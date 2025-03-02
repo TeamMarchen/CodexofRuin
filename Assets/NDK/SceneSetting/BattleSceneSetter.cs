@@ -5,11 +5,15 @@ using UnityEngine;
 public class BattleSceneSetter : SceneSetter
 {
     [SerializeField] private GameObject _stageManager;
-    [SerializeField] private GameObject _PlayerHud;
-
+    [SerializeField] private GameObject _playerHud;
+    [SerializeField] private GameObject _map;
     protected override void Start()
     {
         base.Start();
+        
+        Debug.Assert(_stageManager);
+        Debug.Assert(_playerHud);
+        Debug.Assert(_map);
 
         GameObject stageManagerObj = Instantiate(_stageManager);
         SpecDataManager specDataManager = SpecDataManager.Instance;
@@ -23,7 +27,10 @@ public class BattleSceneSetter : SceneSetter
             stageManager.Initialize(monsterDataSos,characterDataSos,stageDataSo,playerDataSos);
         }
 
-        GameObject playerHudObj = Instantiate(_PlayerHud);
+        GameObject playerHudObj = Instantiate(_playerHud);
         playerHudObj.SetActive(true);
+
+        GameObject mapObj = Instantiate(_map);
+        
     }
 }

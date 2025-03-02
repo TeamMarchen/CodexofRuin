@@ -128,7 +128,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &3245701949988003143
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 2619760329205219680}
   - component: {fileID: 897455844500720044}
   - component: {fileID: 1415331461756992610}
+  - component: {fileID: 7228900183167398765}
   m_Layer: 5
   m_Name: Bai Hayeon
   m_TagString: Untagged
@@ -342,6 +343,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!210 &7228900183167398765
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7374424573656183466}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &8107762543736396029
 GameObject:
   m_ObjectHideFlags: 0
