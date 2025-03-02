@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 669ac38e28645284c839d35fb0dc1dcf
+  - enabled: 1
+    path: Assets/Scenes/Prolog01.unity
+    guid: c398a82152fa9804d8fc02fd0a692014
+  - enabled: 1
+    path: Assets/Scenes/Prolog02.unity
+    guid: 55aa0d8eae488c44a982cb51ca3aab26
+  - enabled: 1
+    path: Assets/Scenes/Prolog03.unity
+    guid: cd17340f82008fc49b23e4457092ddf2
   m_configObjects: {}

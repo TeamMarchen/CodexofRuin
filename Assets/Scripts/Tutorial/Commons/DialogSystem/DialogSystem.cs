@@ -20,9 +20,10 @@ public class DialogSystem : MonoBehaviour
 	[SerializeField]
 	private	float				typingSpeed;					// 텍스트 타이핑 효과의 재생 속도
 	[SerializeField]
-	private	KeyCode				keyCodeSkip = KeyCode.Space;	// 타이핑 효과를 스킵하는 키
+	private	KeyCode				keyCodeSkip = KeyCode.Space;    // 타이핑 효과를 스킵하는 키
+  
 
-	private	int					currentIndex = -1;
+    private	int					currentIndex = -1;
 	private	bool				isTypingEffect = false;			// 텍스트 타이핑 효과를 재생중인지
 	private	Speaker				currentSpeaker = Speaker.MI;
 
@@ -111,9 +112,8 @@ public class DialogSystem : MonoBehaviour
 		int index = 0;
 		
 		isTypingEffect = true;
-
-		// 텍스트를 한글자씩 타이핑치듯 재생
-		while ( index < dialogs[currentIndex].dialogue.Length )
+        // 텍스트를 한글자씩 타이핑치듯 재생
+        while ( index < dialogs[currentIndex].dialogue.Length )
 		{
 			textDialogues[(int)currentSpeaker].text = dialogs[currentIndex].dialogue.Substring(0, index);
 
@@ -127,6 +127,7 @@ public class DialogSystem : MonoBehaviour
 		// 대사가 완료되었을 때 출력되는 커서 활성화
 		objectArrows[(int)currentSpeaker].SetActive(true);
 	}
+   
 }
 
 [System.Serializable]
@@ -134,6 +135,6 @@ public struct Dialog
 {
 	public	Speaker		speaker;	// 화자
 	[TextArea(3, 5)]
-	public	string		dialogue;	// 대사
+	public	string		dialogue;   // 대사
 }
 
