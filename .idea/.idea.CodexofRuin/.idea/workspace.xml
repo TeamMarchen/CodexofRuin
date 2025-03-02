@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715cf415-4136-4f76-8bdc-211ae9815888" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/NDK/Prefab/Map1.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NDK/Prefab/Map1.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneSetting/BattleSceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/BattleSceneSetter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneSetting/LobbySceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/LobbySceneSetter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneSetting/SceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/SceneSetter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MapScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MapScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/StageManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="715cf415-4136-4f76-8bdc-211ae9815888" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
