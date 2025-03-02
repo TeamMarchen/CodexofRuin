@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  healthBarPrefab: {fileID: 0}
+  healthBarFill: {fileID: 4232663960107924924}
 --- !u!50 &6423271280107944044
 Rigidbody2D:
   serializedVersion: 4

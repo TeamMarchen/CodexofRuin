@@ -75,7 +75,7 @@ public class StageManager : Singleton<StageManager>
         monsterData = monsterDataSos_;
         foreach (var data in characterDataSos_)
         {
-            if (data.Value.name == stageDataSos_.bossType)
+            if (data.Value.characterName.Equals(stageDataSos_.bossType))
             {
                 bossData = data.Value;
                 break;
