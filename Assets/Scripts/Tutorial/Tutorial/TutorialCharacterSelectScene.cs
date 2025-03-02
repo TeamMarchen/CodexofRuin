@@ -21,7 +21,7 @@ public class TutorialCharacterSelectScene : MonoBehaviour
     }
     public void StartMainScene()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Prolog01");
     }
     public void Ending()
     {
