@@ -27,10 +27,6 @@ public class Monster : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer == null)
-        {
-            Debug.LogError("SpriteRenderer가 Monster 오브젝트에 없습니다!");
-        }
     }
 
     private void Update()
@@ -64,8 +60,6 @@ public class Monster : MonoBehaviour
         gameObject.SetActive(false);
 
         OnMonsterKilled?.Invoke(this);
-
-        Debug.Log($"{(IsBoss ? "보스" : "일반")} 몬스터가 사망했습니다.");
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -79,7 +73,6 @@ public class Monster : MonoBehaviour
             {
                 player.TakeDamage(data.baseDamage);
                 lastDamageTime = Time.time;
-                Debug.Log($"플레이어에게 {data.baseDamage} 데미지를 입혔습니다.");
             }
         }
     }

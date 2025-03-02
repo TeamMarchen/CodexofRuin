@@ -26,11 +26,6 @@ public class PlayerController : MonoBehaviour, IDamage
     private bool isSkillFirOnCooldown = false;
 
     private Coroutine attackCoroutine;
-
-    private void Start()
-    {
-        
-    }
     private void Awake()
     {
         magicBulletPool = new ObjectPool<MagicBullet>(magicBullet, 5, transform);

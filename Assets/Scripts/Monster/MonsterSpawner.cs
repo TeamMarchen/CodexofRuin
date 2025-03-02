@@ -10,8 +10,8 @@ public class MonsterSpawner : MonoBehaviour
     public float maxRadius = 10f;
 
     [Header("Monster Prefabs")]
-    public List<Monster> monsterPrefabs; // ���� ������ ���� ������
-    public Monster bossPrefab; // ���� ���� ������
+    public List<Monster> monsterPrefabs;
+    public Monster bossPrefab;
 
     private Dictionary<Monster, int> monsterSpawnCount = new Dictionary<Monster, int>();
     private ObjectPool<Monster> monsterPool;
@@ -22,11 +22,11 @@ public class MonsterSpawner : MonoBehaviour
     public float spawnIncreaseInterval = 10f;
 
     private int currentSpawnCount;
-    private int totalSpawnedMonsters = 0; // ���� ������ ���� ��
-    private int killedMonsters = 0; // óġ�� ���� ��
+    private int totalSpawnedMonsters = 0;
+    private int killedMonsters = 0;
 
     [Header("Monster Spawn Limit")]
-    public int maxMonsters = 2000; // �ִ� ���� ���� ��
+    public int maxMonsters = 2000;
 
     private bool isSpawning = false;
     private bool bossSpawned = false;
@@ -42,16 +42,15 @@ public class MonsterSpawner : MonoBehaviour
     public delegate void StageClearHandler();
     public event StageClearHandler OnStageClear;
 
-    public void Initialize(GameObject playerObject)
+    public void Initialize(GameObject playerObject, List<int> monsterIdList, IReadOnlyDictionary<int, MonsterDataSO> monsterDataSos_, CharacterDataSO characterDataSO)
     {
         player = playerObject;
-        monsterPool = new ObjectPool<Monster>(bossPrefab, maxMonsters + 1, transform); // ���� �����Ͽ� +1
+        monsterPool = new ObjectPool<Monster>(bossPrefab, maxMonsters + 1, transform);
 
-        // �ʱ� ���� ���� ����
         monsterSpawnCount.Clear();
         foreach (var prefab in monsterPrefabs)
         {
-            monsterSpawnCount[prefab] = maxMonsters / monsterPrefabs.Count; // ������ ���� ���� �� �յ� �й�
+            monsterSpawnCount[prefab] = maxMonsters / monsterPrefabs.Count;
         }
     }
 
@@ -108,7 +107,6 @@ public class MonsterSpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnIncreaseInterval);
             currentSpawnCount = Mathf.Min(currentSpawnCount + 10, maxMonsters - totalSpawnedMonsters);
-            Debug.Log($"���� �� ����: ���� ���� �� = {currentSpawnCount}����");
         }
     }
 
@@ -146,8 +144,6 @@ public class MonsterSpawner : MonoBehaviour
         boss.Initialize(GetBossData(), player.transform);
 
         boss.OnMonsterKilled += HandleBossKilled;
-
-        Debug.Log("���� ���� ���� �Ϸ�!");
     }
 
     private Vector3 GetRandomSpawnPosition()
@@ -198,9 +194,8 @@ public class MonsterSpawner : MonoBehaviour
     {
         monsterPool.Release(boss);
         OnBossKilled?.Invoke();
-        OnStageClear?.Invoke(); // �������� Ŭ���� �̺�Ʈ ȣ��
+        OnStageClear?.Invoke();
         StopSpawning();
-        Debug.Log("���� ���� óġ! �������� Ŭ����!");
     }
 
     public void ClearAllMonsters()
@@ -210,7 +205,5 @@ public class MonsterSpawner : MonoBehaviour
         {
             monsterPool.Release(monster);
         }
-
-        Debug.Log("��� ���͸� �����߽��ϴ�.");
     }
 }
