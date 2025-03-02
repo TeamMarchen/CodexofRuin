@@ -5,6 +5,8 @@ using UnityEngine;
 public class MainSceneSetter : SceneSetter {
     // Start is called before the first frame update
 
+    [SerializeField] private GameObject MainUI;
+    
     protected override void Start()
     {
         base.Start();

@@ -10,8 +10,8 @@ public class MonsterSpawner : MonoBehaviour
     public float maxRadius = 10f;
 
     [Header("Monster Prefabs")]
-    public List<Monster> monsterPrefabs; // ¿©·¯ Á¾·ùÀÇ ¸ó½ºÅÍ ÇÁ¸®ÆÕ
-    public Monster bossPrefab; // º¸½º ¸ó½ºÅÍ ÇÁ¸®ÆÕ
+    public List<Monster> monsterPrefabs; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public Monster bossPrefab; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     private Dictionary<Monster, int> monsterSpawnCount = new Dictionary<Monster, int>();
     private ObjectPool<Monster> monsterPool;
@@ -22,11 +22,11 @@ public class MonsterSpawner : MonoBehaviour
     public float spawnIncreaseInterval = 10f;
 
     private int currentSpawnCount;
-    private int totalSpawnedMonsters = 0; // ÇöÀç ½ºÆùµÈ ¸ó½ºÅÍ ¼ö
-    private int killedMonsters = 0; // Ã³Ä¡µÈ ¸ó½ºÅÍ ¼ö
+    private int totalSpawnedMonsters = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+    private int killedMonsters = 0; // Ã³Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
     [Header("Monster Spawn Limit")]
-    public int maxMonsters = 2000; // ÃÖ´ë ¸ó½ºÅÍ ½ºÆù ¼ö
+    public int maxMonsters = 2000; // ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
     private bool isSpawning = false;
     private bool bossSpawned = false;
@@ -45,13 +45,13 @@ public class MonsterSpawner : MonoBehaviour
     public void Initialize(GameObject playerObject)
     {
         player = playerObject;
-        monsterPool = new ObjectPool<Monster>(bossPrefab, maxMonsters + 1, transform); // º¸½º Æ÷ÇÔÇÏ¿© +1
+        monsterPool = new ObjectPool<Monster>(bossPrefab, maxMonsters + 1, transform); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ +1
 
-        // ÃÊ±â ¸ó½ºÅÍ ½ºÆù ¼³Á¤
+        // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         monsterSpawnCount.Clear();
         foreach (var prefab in monsterPrefabs)
         {
-            monsterSpawnCount[prefab] = maxMonsters / monsterPrefabs.Count; // Á¾·ùº° ¸ó½ºÅÍ ½ºÆù ¼ö ±Õµî ºÐ¹è
+            monsterSpawnCount[prefab] = maxMonsters / monsterPrefabs.Count; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Õµï¿½ ï¿½Ð¹ï¿½
         }
     }
 
@@ -108,7 +108,7 @@ public class MonsterSpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnIncreaseInterval);
             currentSpawnCount = Mathf.Min(currentSpawnCount + 10, maxMonsters - totalSpawnedMonsters);
-            Debug.Log($"½ºÆù ¼ö Áõ°¡: ÇöÀç ½ºÆù ¼ö = {currentSpawnCount}¸¶¸®");
+            Debug.Log($"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ = {currentSpawnCount}ï¿½ï¿½ï¿½ï¿½");
         }
     }
 
@@ -147,7 +147,7 @@ public class MonsterSpawner : MonoBehaviour
 
         boss.OnMonsterKilled += HandleBossKilled;
 
-        Debug.Log("º¸½º ¸ó½ºÅÍ ½ºÆù ¿Ï·á!");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½!");
     }
 
     private Vector3 GetRandomSpawnPosition()
@@ -198,9 +198,9 @@ public class MonsterSpawner : MonoBehaviour
     {
         monsterPool.Release(boss);
         OnBossKilled?.Invoke();
-        OnStageClear?.Invoke(); // ½ºÅ×ÀÌÁö Å¬¸®¾î ÀÌº¥Æ® È£Ãâ
+        OnStageClear?.Invoke(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® È£ï¿½ï¿½
         StopSpawning();
-        Debug.Log("º¸½º ¸ó½ºÅÍ Ã³Ä¡! ½ºÅ×ÀÌÁö Å¬¸®¾î!");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³Ä¡! ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½!");
     }
 
     public void ClearAllMonsters()
@@ -211,6 +211,6 @@ public class MonsterSpawner : MonoBehaviour
             monsterPool.Release(monster);
         }
 
-        Debug.Log("¸ðµç ¸ó½ºÅÍ¸¦ Á¦°ÅÇß½À´Ï´Ù.");
+        Debug.Log("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
     }
 }
