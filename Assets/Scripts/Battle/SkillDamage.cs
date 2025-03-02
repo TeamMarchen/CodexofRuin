@@ -29,11 +29,14 @@ public class SkillDamage : MonoBehaviour
     {
         while (true)
         {
-            // 초당 지속 데미지 적용
             Monster monster = target.GetComponent<Monster>();
+            Boss boss = target.GetComponent<Boss>();
             if (monster != null)
             {
                 monster.TakeDamage(PlayerStatus.Instance.level * 40);
+            }else if (boss != null)
+            {
+                boss.TakeDamage(PlayerStatus.Instance.level * 40);
             }
 
             yield return new WaitForSeconds(1f); // 1초마다 데미지 적용

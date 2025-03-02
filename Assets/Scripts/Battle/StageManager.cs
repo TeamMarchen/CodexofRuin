@@ -167,7 +167,8 @@ public class StageManager : Singleton<StageManager>
 
             if (isStageFailed)
             {
-                Debug.Log("스테이지 실패!");
+
+                SceneManager.LoadScene("StartScene");
                 break;
             }
 
