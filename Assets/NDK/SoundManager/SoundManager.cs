@@ -20,7 +20,7 @@ public class SoundManager : Singleton<SoundManager>
     public event Func<float> GetBGMVolume;
     public event Func<float> GetSfxVolume;
 
-    private void Init(Func<string,AudioClip> getAudio_, Func<float> getBGMVolume_ = null, Func<float> getSfxVolume_ = null)
+    public void Init(Func<string,AudioClip> getAudio_, Func<float> getBGMVolume_ = null, Func<float> getSfxVolume_ = null)
     {
         GetAudio = getAudio_;
         GetBGMVolume = getBGMVolume_;

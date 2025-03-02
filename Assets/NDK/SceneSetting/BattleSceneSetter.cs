@@ -8,7 +8,8 @@ public class BattleSceneSetter : SceneSetter
     [SerializeField] private GameObject _stageManager;
     [SerializeField] private GameObject _playerHud;
     [SerializeField] private GameObject _map;
-
+    
+    
     private SkillUI SkillUI;
     protected override void Start()
     {
@@ -50,7 +51,7 @@ public class BattleSceneSetter : SceneSetter
         }
 
         GameObject mapObj = Instantiate(_map);
-        SoundManager.Instance.Play("");
+        SoundManager.Instance.Play("WARningSignDEMO",Enums.AUDIO_TYPE.BGM,true);
     }
 
     private void OnDisable()

@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="715cf415-4136-4f76-8bdc-211ae9815888" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monster/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monster/Monster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneSetting/BattleSceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/BattleSceneSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneSetting/SceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/SceneSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SoundManager/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SoundManager/SoundManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +24,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/NDK/SceneSetting/LobbySceneSetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NDK/SceneSetting/MainSceneSetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/FederationSkillSOMaker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap.extras@3.1.3/Editor/Tiles/IsometricRuleTile/IsometricRuleTileEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.34/Rider/Editor/Debugger/RiderDebugLinkXmlProcessor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/COMIntegration/COMIntegration~/ComPtr.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Testing/TestRunnerApiListener.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/GUI/Views/PlayModeTestListGUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/RectMask2DReparentedToDifferentCanvas.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/SiblingOrderChangesLayout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/UIBehaviourExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../EvenITeam3Project/Assets/_Projects/Scripts/Editor/GoogleSheetToSO.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -108,7 +114,7 @@
       <workItem from="1740881707560" duration="9598000" />
       <workItem from="1740895921779" duration="699000" />
       <workItem from="1740899339342" duration="3771000" />
-      <workItem from="1740943248199" duration="1601000" />
+      <workItem from="1740943248199" duration="4996000" />
     </task>
     <servers />
   </component>
@@ -142,30 +148,56 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs</url>
-          <line>51</line>
-          <properties documentPath="I:\Github\CodexofRuin\Assets\Scripts\Player\PlayerController.cs" containingFunctionPresentation="메서드 'Initialize'">
-            <startOffsets>
-              <option value="1747" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1766" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Monster/Monster.cs</url>
           <line>100</line>
           <properties documentPath="I:\Github\CodexofRuin\Assets\Scripts\Monster\Monster.cs" containingFunctionPresentation="메서드 'OnCollisionEnter2D'">
             <startOffsets>
-              <option value="2283" />
+              <option value="2325" />
             </startOffsets>
             <endOffsets>
               <option value="2359" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NDK/SoundManager/SoundManager.cs</url>
+          <line>98</line>
+          <properties documentPath="I:\Github\CodexofRuin\Assets\NDK\SoundManager\SoundManager.cs" containingFunctionPresentation="메서드 'GetSFXAudioSource'">
+            <startOffsets>
+              <option value="3095" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3143" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NDK/SceneSetting/BattleSceneSetter.cs</url>
+          <line>53</line>
+          <properties documentPath="I:\Github\CodexofRuin\Assets\NDK\SceneSetting\BattleSceneSetter.cs" containingFunctionPresentation="메서드 'Start'">
+            <startOffsets>
+              <option value="2053" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2104" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NDK/ResourceManager/ResourceManager.cs</url>
+          <line>34</line>
+          <properties documentPath="I:\Github\CodexofRuin\Assets\NDK\ResourceManager\ResourceManager.cs" containingFunctionPresentation="메서드 'LoadResource'">
+            <startOffsets>
+              <option value="1191" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1252" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
