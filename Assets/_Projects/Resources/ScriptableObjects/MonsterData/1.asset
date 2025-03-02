@@ -19,3 +19,4 @@ MonoBehaviour:
   attack: 50
   defense: 20
   maxMP: 50
+  ImagePath: "_MonsterCH\r"

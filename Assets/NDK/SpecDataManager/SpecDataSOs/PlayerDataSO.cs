@@ -9,4 +9,5 @@ public class PlayerDataSO : SpecDataSO
     public int attack;
     public int defense;
     public int mp;
+    public string playerImagePath;
 }

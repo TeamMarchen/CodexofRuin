@@ -16,7 +16,7 @@ public class MonsterDataSOMaker : SpecDataSOMaker
         monsterDataSo.attack = int.Parse(data[4]);
         monsterDataSo.defense = int.Parse(data[5]);
         monsterDataSo.maxMP = int.Parse(data[6]);
-
+        monsterDataSo.ImagePath = data[7];
         return monsterDataSo;
     }
 }

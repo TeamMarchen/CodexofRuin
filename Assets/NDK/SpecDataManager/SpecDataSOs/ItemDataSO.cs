@@ -8,4 +8,5 @@ public class ItemDataSO : SpecDataSO
     public int hp;
     public int mp;
     public string description;
+    public string imagePath;
 }

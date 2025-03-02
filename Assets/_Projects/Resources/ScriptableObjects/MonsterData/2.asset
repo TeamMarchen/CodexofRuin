@@ -19,3 +19,4 @@ MonoBehaviour:
   attack: 70
   defense: 30
   maxMP: 30
+  ImagePath: _DarkCH12

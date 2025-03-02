@@ -15,7 +15,7 @@ public class ItemDataSOMaker : SpecDataSOMaker
         itemDataSo.hp = int.Parse(data[3]);
         itemDataSo.mp = int.Parse(data[4]);
         itemDataSo.description = data[5];
-        
+        itemDataSo.imagePath = data[6];
         return itemDataSo;
     }
 }

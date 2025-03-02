@@ -17,7 +17,8 @@ public class CharacterDataSOMaker : SpecDataSOMaker
         characterDataSo.attack = int.Parse(data[6]);
         characterDataSo.defense = int.Parse(data[7]);
         characterDataSo.maxMP = int.Parse(data[8]);
-
+        characterDataSo.imagePath = data[9];
+        
         return characterDataSo;
     }
 }

@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: 102
   m_EditorClassIdentifier: 
   id: 102
-  characterName: Bai Hayeon
-  faction: Korean Alliance
-  role: Sage
-  level: 28
-  maxHP: 2800
-  attack: 180
-  defense: 140
-  maxMP: 600
+  characterName: Ryu Feng
+  faction: Chinese Alliance
+  role: Martial Artist
+  level: 32
+  maxHP: 3200
+  attack: 220
+  defense: 160
+  maxMP: 450
+  imagePath: "_FireCH\r"
