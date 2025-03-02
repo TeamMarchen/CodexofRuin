@@ -14,8 +14,9 @@ public class LoadingSetter : SceneSetter
         TryGetComponent(out _loadingCtrl);
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         Initialize();
     }
 

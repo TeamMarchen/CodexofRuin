@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: SpecDataPathSO
   m_EditorClassIdentifier: 
   specDataPaths:
-    SpecDataTypes: 
-    urlPath: []
-    savePath: []
+    SpecDataTypes: 0100000002000000030000000400000005000000060000000700000008000000
+    urlPath:
+    - https://docs.google.com/spreadsheets/d/e/2PACX-1vQiW9cnCeHpxgk_yaMcmPz-OWFW-2qGa5LU7eRwFKanFQondcA7Pyi1LHCDUE4zaYTxSClve_9dtQ8E/pub?gid=1069123507&single=true&output=csv
+    - https://docs.google.com/spreadsheets/d/e/2PACX-1vQiW9cnCeHpxgk_yaMcmPz-OWFW-2qGa5LU7eRwFKanFQondcA7Pyi1LHCDUE4zaYTxSClve_9dtQ8E/pub?gid=1354667986&single=true&output=csv
+    - https://docs.google.com/spreadsheets/d/e/2PACX-1vQiW9cnCeHpxgk_yaMcmPz-OWFW-2qGa5LU7eRwFKanFQondcA7Pyi1LHCDUE4zaYTxSClve_9dtQ8E/pub?gid=890846838&single=true&output=csv
+    - https://docs.google.com/spreadsheets/d/e/2PACX-1vQiW9cnCeHpxgk_yaMcmPz-OWFW-2qGa5LU7eRwFKanFQondcA7Pyi1LHCDUE4zaYTxSClve_9dtQ8E/pub?gid=191362172&single=true&output=csv
+    - https://docs.google.com/spreadsheets/d/e/2PACX-1vQiW9cnCeHpxgk_yaMcmPz-OWFW-2qGa5LU7eRwFKanFQondcA7Pyi1LHCDUE4zaYTxSClve_9dtQ8E/pub?gid=1350554243&single=true&output=csv
+    - https://docs.google.com/spreadsheets/d/e/2PACX-1vQiW9cnCeHpxgk_yaMcmPz-OWFW-2qGa5LU7eRwFKanFQondcA7Pyi1LHCDUE4zaYTxSClve_9dtQ8E/pub?gid=2136444933&single=true&output=csv
+    - https://docs.google.com/spreadsheets/d/e/2PACX-1vQiW9cnCeHpxgk_yaMcmPz-OWFW-2qGa5LU7eRwFKanFQondcA7Pyi1LHCDUE4zaYTxSClve_9dtQ8E/pub?gid=2070238338&single=true&output=csv
+    - https://docs.google.com/spreadsheets/d/e/2PACX-1vQiW9cnCeHpxgk_yaMcmPz-OWFW-2qGa5LU7eRwFKanFQondcA7Pyi1LHCDUE4zaYTxSClve_9dtQ8E/pub?gid=1314932784&single=true&output=csv
+    savePath:
+    - StageData
+    - MonsterData
+    - CharacterData
+    - PlayerSkillData
+    - FederationSkillData
+    - FederationData
+    - PlayerData
+    - ItemData

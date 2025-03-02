@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpecDataManager : Singleton<SpecDataManager>
 {
-    private List<Dictionary<string, SpecDataSO>> _specDatas;
+    private List<Dictionary<int, SpecDataSO>> _specDatas;
     public bool isLoaded { private set; get; } = false;
     
     protected override void Awake()
@@ -23,34 +23,35 @@ public class SpecDataManager : Singleton<SpecDataManager>
     private void InitData()
     {
         int length = (int)Enums.SPEC_DATA_TYPE.EMax;
-        _specDatas = new List<Dictionary<string, SpecDataSO>>(length);
+        _specDatas = new List<Dictionary<int, SpecDataSO>>(length);
         for (int i = 0; i <length; i++)
         {
-            _specDatas.Add(new Dictionary<string, SpecDataSO>());
+            _specDatas.Add(new Dictionary<int, SpecDataSO>());
         }
         
-        // SpecDataSO[] CharacterDataSos = Resources.LoadAll<SpecDataSO>(Path.CharacterDataSOInResources);
-        // SpecDataSO[] IngameLevelDataSos = Resources.LoadAll<SpecDataSO>(Path.IngameLevelSOInResources);
-        // SpecDataSO[] outGameLevelDataSos = Resources.LoadAll<SpecDataSO>(Path.OutGameLevelDataSOInResources);
-        // SpecDataSO[] stageInfoSos = Resources.LoadAll<SpecDataSO>(Path.StageInfoSOInResources);
-        // SpecDataSO[] AchievementInfoSos = Resources.LoadAll<SpecDataSO>(Path.AchievementInfo);
-        // SpecDataSO[] EquipmentLevelDataSos = Resources.LoadAll<SpecDataSO>(Path.EquipmentLevelDataResources);
-        // SpecDataSO[] Skill = Resources.LoadAll<SpecDataSO>(Path.Skill);
-        // SpecDataSO[] upgradeSpecDataSos = Resources.LoadAll<SpecDataSO>(Path.UpgradeSpecData);
-        //
-        // AddDataToDic(Enums.SpecDataType.CharacterSpecData,CharacterDataSos);
-        // AddDataToDic(Enums.SpecDataType.IngameLevelData,IngameLevelDataSos);
-        // AddDataToDic(Enums.SpecDataType.OutGameGradeData,outGameLevelDataSos);
-        // AddDataToDic(Enums.SpecDataType.StageInfo,stageInfoSos);
-        // AddDataToDic(Enums.SpecDataType.AchievementInfo,AchievementInfoSos);
-        // AddDataToDic(Enums.SpecDataType.EquipmentLevelData,EquipmentLevelDataSos);
-        // AddDataToDic(Enums.SpecDataType.Skill,Skill);
-        // AddDataToDic(Enums.SpecDataType.UpgradeSpecDataSO,upgradeSpecDataSos);
+        //NONE = 0, STAGE_DATA, MONSTER_DATA, CHARACTER_DATA, PLAYER_SKILL_DATA, FEDERATION_SKILL_DATA, FEDERATION_DATA, PLAYER_DATA, ITEM_DATA,
+        SpecDataSO[] stageDataSO = Resources.LoadAll<SpecDataSO>(Const.String.Path.STAGE_DATA_PATH);
+        SpecDataSO[] monsterDataSO = Resources.LoadAll<SpecDataSO>(Const.String.Path.MONSTER_DATA_PATH);
+        SpecDataSO[] characterDataSO = Resources.LoadAll<SpecDataSO>(Const.String.Path.CHARACTER_DATA_PATH);
+        SpecDataSO[] playerSkillDataSO = Resources.LoadAll<SpecDataSO>(Const.String.Path.PLAYER_SKILL_DATA_PATH);
+        SpecDataSO[] federationSkillDataSO = Resources.LoadAll<SpecDataSO>(Const.String.Path.FEDERATION_SKILL_DATA_PATH);
+        SpecDataSO[] federationDataSO = Resources.LoadAll<SpecDataSO>(Const.String.Path.FEDERATION_DATA_PATH);
+        SpecDataSO[] playerDataSO = Resources.LoadAll<SpecDataSO>(Const.String.Path.PLAYER_DATA_PATH);
+        SpecDataSO[] itemDataSO = Resources.LoadAll<SpecDataSO>(Const.String.Path.ITEM_DATA_PATH);
+        
+        AddDataToDic(Enums.SPEC_DATA_TYPE.STAGE_DATA,stageDataSO);
+        AddDataToDic(Enums.SPEC_DATA_TYPE.MONSTER_DATA,monsterDataSO);
+        AddDataToDic(Enums.SPEC_DATA_TYPE.CHARACTER_DATA,characterDataSO);
+        AddDataToDic(Enums.SPEC_DATA_TYPE.PLAYER_SKILL_DATA,playerSkillDataSO);
+        AddDataToDic(Enums.SPEC_DATA_TYPE.FEDERATION_SKILL_DATA,federationSkillDataSO);
+        AddDataToDic(Enums.SPEC_DATA_TYPE.FEDERATION_DATA,federationDataSO);
+        AddDataToDic(Enums.SPEC_DATA_TYPE.PLAYER_DATA,playerDataSO);
+        AddDataToDic(Enums.SPEC_DATA_TYPE.ITEM_DATA,itemDataSO);
     }
 
     private void AddDataToDic(Enums.SPEC_DATA_TYPE type, SpecDataSO[] datas)
     {
-        Dictionary<string, SpecDataSO> dicData = _specDatas[(int)type];
+        Dictionary<int, SpecDataSO> dicData = _specDatas[(int)type];
         for (int i = 0; i < datas.Length; i++)
         {
             if (!dicData.TryAdd(datas[i].id, datas[i]))
@@ -60,7 +61,7 @@ public class SpecDataManager : Singleton<SpecDataManager>
         }
     }
 
-    public bool GetData<T>(string id,out T data) where T : ScriptableObject
+    public bool GetData<T>(int id,out T data) where T : ScriptableObject
     {
         if (!isLoaded)
             Init();
@@ -74,7 +75,7 @@ public class SpecDataManager : Singleton<SpecDataManager>
         return isExist;
     }
 
-    public IReadOnlyDictionary<string,SpecDataSO> GetDataList<T>() where T : SpecDataSO
+    public IReadOnlyDictionary<int,SpecDataSO> GetDataList<T>() where T : SpecDataSO
     {
         if(!isLoaded)
             Init();

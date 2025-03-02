@@ -5,7 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="715cf415-4136-4f76-8bdc-211ae9815888" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/NDK/SaveNLoadManager.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/Global/Const.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/Global/Const.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/Global/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/Global/Enums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneManager/LoadingControlller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneManager/LoadingControlller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneManager/LoadingSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/LoadingSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneManager/LoadingSetter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/LoadingSetter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneManager/SceneManagerEx.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneManager/SceneManagerEx.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneManager/SceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/SceneSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneManager/SceneSetter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/SceneSetter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SoundManager/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SoundManager/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/GoogleSheetToSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/GoogleSheetToSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/BossDataSOMaker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/BossDataSOMaker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/CharacterDataSOMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/CharacterDataSOMaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/FederationDataSOMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/FederationDataSOMaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/FederationSkillSOMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/FederationSkillSOMaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/MonsterDataSOMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/MonsterDataSOMaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/PlayerSkillSOMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/PlayerSkillSOMaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/StageDataSOMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/StageDataSOMaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/SpecDataPathSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/SpecDataPathSO.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/BossDataSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/BossDataSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/CharacterDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/CharacterDataSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/FederationDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/FederationDataSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/FederationSkillSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/FederationSkillSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/MonsterDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/MonsterDataSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/PlayerSkillSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/PlayerSkillSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/StageDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SpecDataManager/SpecDataSOs/StageDataSO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +42,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/NDK/ScriptableObject/IngameSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1899c5bd2a6d466081cd705bee01d689955800/00/75993f2f/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NDK/Global/Const.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NDK/SpecDataManager/Editor/MakeSO/FederationSkillSOMaker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.28/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../EvenITeam3Project/Assets/_Projects/Scripts/Editor/GoogleSheetToSO.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -23,24 +57,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\shehd\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\shehd\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\shehd\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\shehd\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\shehd\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\shehd\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="F:\Unity\Editor\2022.3.23f1\Editor\Unity.exe" />
@@ -89,6 +124,7 @@
       <updated>1740831239093</updated>
       <workItem from="1740831240161" duration="3369000" />
       <workItem from="1740834748866" duration="941000" />
+      <workItem from="1740881707560" duration="6707000" />
     </task>
     <servers />
   </component>

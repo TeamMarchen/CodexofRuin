@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LoadingControlller : MonoBehaviour
 {
-    private Enums.SceneType _nextSceneType = Enums.SceneType.Unknown;
+    private Enums.SCENE_TYPE _nextSceneType = Enums.SCENE_TYPE.Unknown;
     private readonly float _smoothTime = 0.8f;
     
     public float Progress { get; private set; }
@@ -17,7 +17,7 @@ public class LoadingControlller : MonoBehaviour
     {
         _nextSceneType = SceneManagerEx.Instance.NextSceneType();
         Time.timeScale = 1;
-        if (_nextSceneType != Enums.SceneType.Unknown) StartCoroutine(LoadSceneProcess());
+        if (_nextSceneType != Enums.SCENE_TYPE.Unknown) StartCoroutine(LoadSceneProcess());
     }
     
     IEnumerator LoadSceneProcess()

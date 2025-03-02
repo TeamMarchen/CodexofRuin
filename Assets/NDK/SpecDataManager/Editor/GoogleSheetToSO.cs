@@ -21,16 +21,21 @@ public class GoogleSheetToSO : EditorWindow
         // SO 생성 -> SOMaker생성 -> SpecDataType에 타입 추가
         // _makers에 클래스 생성 
         // SpecDataManager에서 Load과정 추가
+        // 로드 링크 연결
         // 초기화
+        //NONE = 0, STAGE_DATA, MONSTER_DATA, CHARACTER_DATA, PLAYER_SKILL_DATA,
+        // FEDERATION_SKILL_DATA, FEDERATION_DATA, PLAYER_DATA, ITEM_DATA,
         _makers = new List<SpecDataSOMaker>((int)Enums.SPEC_DATA_TYPE.EMax);
         _makers.Add(null);
-        _makers.Add(new BossDataSOMaker());
-        _makers.Add(new CharacterDataSOMaker());
-        _makers.Add(new FederationDataSOMaker());
-        _makers.Add(new FederationSkillSOMaker());
-        _makers.Add(new MonsterDataSOMaker());
-        _makers.Add(new PlayerSkillSOMaker());
         _makers.Add(new StageDataSOMaker());
+        _makers.Add(new MonsterDataSOMaker());
+        _makers.Add(new CharacterDataSOMaker());
+        _makers.Add(new PlayerSkillSOMaker());
+        _makers.Add(new FederationSkillSOMaker());
+        _makers.Add(new FederationDataSOMaker());
+        _makers.Add(new PlayerDataSOMaker());
+        _makers.Add(new ItemDataSOMaker());
+        
         // _makers.Add(new CharacterDataSOMaker());
         // _makers.Add(new IngameLevelDataSOMaker());
         // _makers.Add(new OutGameGradeDataSOMaker());

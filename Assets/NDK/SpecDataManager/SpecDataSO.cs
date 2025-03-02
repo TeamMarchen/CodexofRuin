@@ -2,6 +2,6 @@
 
 public abstract class SpecDataSO : ScriptableObject
 {
-    public string id;
+    public int id;
     
 }

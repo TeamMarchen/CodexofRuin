@@ -17,13 +17,17 @@ public class SoundManager : Singleton<SoundManager>
 
     public event Func<string, AudioClip> GetAudio;
 
-    //private SettingManager _settingManager;
+    public event Func<float> GetBGMVolume;
+    public event Func<float> GetSfxVolume;
 
-    private void Awake()
+    private void Init(Func<string,AudioClip> getAudio_, Func<float> getBGMVolume_ = null, Func<float> getSfxVolume_ = null)
     {
+        GetAudio = getAudio_;
+        GetBGMVolume = getBGMVolume_;
+        GetSfxVolume = getSfxVolume_;
+        
         SetAudioMixer();
         LoadData();
-        AddCallbacks();
     }
 
     private void SetAudioMixer()
@@ -36,21 +40,18 @@ public class SoundManager : Singleton<SoundManager>
         _bgmAudioSource.outputAudioMixerGroup = _audioMixer.FindMatchingGroups("BGM")[0];
         _bgmAudioSource.dopplerLevel = 0;
     }
-    
-    private void AddCallbacks()
-    {
-        // if (_settingManager == null) _settingManager = SettingManager.Instance;
-        //
-        // _settingManager.OnDataChange += LoadData;
-    }
 
     private void LoadData()
     {
-        // if (_settingManager == null) _settingManager = SettingManager.Instance;
-        // Debug.Assert(_settingManager != null, "Null Exception : SettingManager");
-        //
-        // SetVolume(_settingManager.GetBGMVolume(), Enums.AudioType.BGM);
-        // SetVolume(_settingManager.GetSFXVolume(), Enums.AudioType.SFX);
+        float BGMVolume = 1;
+        float SFXVolume = 1;
+
+        if (GetBGMVolume != null)
+            BGMVolume = GetBGMVolume.Invoke();
+        if (GetSfxVolume != null)
+            SFXVolume = GetSfxVolume.Invoke();
+        SetVolume(BGMVolume, Enums.AUDIO_TYPE.BGM);
+        SetVolume(SFXVolume, Enums.AUDIO_TYPE.SFX);
     }
 
     private AudioClip LoadAudioClip(string name)
@@ -72,19 +73,19 @@ public class SoundManager : Singleton<SoundManager>
     // 배경 음악 또는 효과음 재생
     // 배경 음악 재생 : SoundManager.Instance.Play("오디오 클립 이름", AudioType.BGM);
     // 효과음 재생 : SoundManager.Instance.Play("오디오 클립 이름");
-    public void Play(string audioClipName, Enums.AudioType audioType = Enums.AudioType.SFX, bool isLooping = false)
+    public void Play(string audioClipName, Enums.AUDIO_TYPE audioType = Enums.AUDIO_TYPE.SFX, bool isLooping = false)
     {
         AudioClip audioClip = LoadAudioClip(audioClipName);
 
         switch (audioType)
         {
-            case Enums.AudioType.BGM:
+            case Enums.AUDIO_TYPE.BGM:
                 if (_bgmAudioSource.isPlaying) _bgmAudioSource.Stop();
                 _bgmAudioSource.clip = audioClip;
                 _bgmAudioSource.loop = true;
                 _bgmAudioSource.Play();
                 break;
-            case Enums.AudioType.SFX:
+            case Enums.AUDIO_TYPE.SFX:
                 AudioSource effectAudioSource = GetSFXAudioSource();
                 effectAudioSource.clip = audioClip;
                 effectAudioSource.loop = isLooping;
@@ -141,17 +142,17 @@ public class SoundManager : Singleton<SoundManager>
         }
     }
 
-    public void SetVolume(float volume, Enums.AudioType audioType)
+    public void SetVolume(float volume, Enums.AUDIO_TYPE audioType)
     {
         float max = 0;
         
         switch (audioType)
         {
-            case Enums.AudioType.BGM:
+            case Enums.AUDIO_TYPE.BGM:
                 max = 0;
                 break;
 
-            case Enums.AudioType.SFX:
+            case Enums.AUDIO_TYPE.SFX:
                 max = 0;
                 break;
         }
@@ -187,13 +188,13 @@ public class SoundManager : Singleton<SoundManager>
         }
     }
 
-    public bool IsPlaying(string audioClipName, Enums.AudioType audioType = Enums.AudioType.SFX)
+    public bool IsPlaying(string audioClipName, Enums.AUDIO_TYPE audioType = Enums.AUDIO_TYPE.SFX)
     {
         switch (audioType)
         {
-            case Enums.AudioType.BGM:
+            case Enums.AUDIO_TYPE.BGM:
                 return _bgmAudioSource.isPlaying && _bgmAudioSource.clip == audioClips[audioClipName];
-            case Enums.AudioType.SFX:
+            case Enums.AUDIO_TYPE.SFX:
                 foreach (var audioSource in _effectAudioSources)
                 {
                     if (audioSource.isPlaying && audioSource.clip == audioClips[audioClipName])

@@ -2,23 +2,29 @@ public class Enums
 {
     public enum SPEC_DATA_TYPE
     {
-        NONE = 0, BossData, CharacterData, FederationData, FederationSkill, MonsterData, PlayerSkill, StageData,
+        NONE = 0, STAGE_DATA, MONSTER_DATA, CHARACTER_DATA, PLAYER_SKILL_DATA, FEDERATION_SKILL_DATA, FEDERATION_DATA, PLAYER_DATA, ITEM_DATA,
         // None=0,CharacterSpecData, IngameLevelData, OutGameGradeData, StageInfo, AchievementInfo,EquipmentLevelData,
         // Skill,UpgradeSpecDataSO, SkinData,  
         
         EMax
     }
     
-    public enum SceneType
+    public enum SCENE_TYPE
     {
         Unknown = -1,
-        StartScene, LobbyScene, GameScene, LoadingScene
+        START_SCENE, LobbyScene, GameScene, LoadingScene
     }
     
-    public enum AudioType
+    public enum AUDIO_TYPE
     {
-        None = -1,
+        NONE = -1,
         
-        Master, SFX, BGM
+        MASTER, SFX, BGM
+    }
+
+    public enum ELEMENT
+    {
+        NONE=0,Light,Water,Fire,Earth,Dark,
+        EMax
     }
 }
