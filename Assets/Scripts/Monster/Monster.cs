@@ -91,13 +91,14 @@ public class Monster : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (Time.time < lastDamageTime + damageCooldown) return;
 
-        if (collision.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            PlayerController player = collision.GetComponent<PlayerController>();
+            PlayerController player = other.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {
                 player.TakeDamage(data.baseDamage);
