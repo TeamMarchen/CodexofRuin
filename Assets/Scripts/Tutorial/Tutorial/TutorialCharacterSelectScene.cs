@@ -17,6 +17,18 @@ public class TutorialCharacterSelectScene : MonoBehaviour
 
     public void StartGo()
     {
+        Invoke("StartMainScene", 1f);
+    }
+    public void StartMainScene()
+    {
         SceneManager.LoadScene("MainScene");
+    }
+    public void Ending()
+    {
+        Invoke("EndingCredit", 1f);
+    }
+    public void EndingCredit()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 }
