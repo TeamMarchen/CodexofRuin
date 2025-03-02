@@ -51,4 +51,5 @@ MonoBehaviour:
   player: {fileID: 1961422907779229854, guid: f6ded63d35742c34a95074b154778d23, type: 3}
   spawner: {fileID: 5197771543628990911, guid: 3a017bca2fdda124f8525f80faf10702, type: 3}
   camera: {fileID: 8651686315918124443, guid: 2e4590b380026434f962eb897d591f1a, type: 3}
-  readerSkill: {fileID: 5305256154263185259, guid: cb1a7070d5c7e1d49b8c1e1a011eb551, type: 3}
+  readerSkill: {fileID: 4784674268603008361, guid: cb1a7070d5c7e1d49b8c1e1a011eb551, type: 3}
+  reader: {fileID: 0}
