@@ -17,6 +17,6 @@ MonoBehaviour:
   level: 2
   hp: 1200
   attack: 120
-  defense: 60
+  defense: 35
   mp: 220
   playerImagePath: "_Player\r"

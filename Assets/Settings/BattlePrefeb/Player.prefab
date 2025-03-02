@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8034175650463313335}
   m_Layer: 6
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 1381341532179147992}
   - component: {fileID: 2236904773677605390}
   - component: {fileID: 8115252193943860984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -178,7 +178,9 @@ MonoBehaviour:
     skillThrKey: 108
   healthBarFill: {fileID: 0}
   manaBarFill: {fileID: 0}
-  skillCooldownFill: {fileID: 0}
+  skillFirCooldownFill: {fileID: 0}
+  skillSecCooldownFill: {fileID: 0}
+  skillThrCooldownFill: {fileID: 0}
   magicBullet: {fileID: 3912983344491700984, guid: 6403a12cf286abf4d82cfd1a2b11bcf5, type: 3}
   fireSkill: {fileID: 9070047202716592071}
 --- !u!50 &2236904773677605390
@@ -255,7 +257,7 @@ GameObject:
   - component: {fileID: 4917482950343926639}
   - component: {fileID: 5549222589335703664}
   - component: {fileID: 8620183485549449205}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FireSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +299,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -318,12 +320,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13c5ba915b9e86d4287286be3f84fc7e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7710f1c36f532284ebd82061fc2a1d0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.17}
+  m_Size: {x: 1.21, y: 1.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -365,8 +367,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.17}
-    newSize: {x: 0.16, y: 0.17}
+    oldSize: {x: 1.21, y: 1.21}
+    newSize: {x: 1.21, y: 1.21}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

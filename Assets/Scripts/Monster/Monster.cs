@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
+using System;
 
 public class Monster : MonoBehaviour
 {
     public MonsterData data;
     [SerializeField]
     private Transform target;
+    NavMeshAgent agent;
     private SpriteRenderer spriteRenderer;
 
     [Header("Health Bar Settings")]
@@ -24,9 +27,12 @@ public class Monster : MonoBehaviour
 
     public void Initialize(MonsterData monsterData, Transform playerTarget)
     {
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
         data = monsterData;
         target = playerTarget;
-        data.hp = monsterData.hp; // 체력을 초기화
+        data.curruntHp = monsterData.hp;
         UpdateHealthBar();
     }
 
@@ -48,16 +54,19 @@ public class Monster : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
-        Vector3 direction = (target.position - transform.position).normalized;
-        transform.Translate(direction * data.speed * Time.deltaTime, Space.World);
+        agent.SetDestination(target.position);
+        if (!agent.isOnNavMesh)
+        {
+            Die();
+        }
 
         UpdateHealthBar();
     }
 
     public void TakeDamage(float damage)
     {
-        data.hp -= damage;
-        if (data.hp <= 0)
+        data.curruntHp -= damage;
+        if (data.curruntHp <= 0)
         {
             Die();
         }
@@ -75,17 +84,21 @@ public class Monster : MonoBehaviour
     {
         if (healthBarFill != null)
         {
-            healthBarFill.fillAmount = data.curruntHp / data.hp;
+            healthBarFill.fillAmount = (float)(data.curruntHp / data.hp);
+        } else
+        {
+            Debug.Log("");
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (Time.time < lastDamageTime + damageCooldown) return;
 
-        if (collision.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            PlayerController player = collision.GetComponent<PlayerController>();
+            PlayerController player = other.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {
                 player.TakeDamage(data.baseDamage);

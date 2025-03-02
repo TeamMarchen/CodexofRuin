@@ -22,9 +22,6 @@ public class MagicBullet : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-        Collider2D collider = GetComponent<Collider2D>();
-        collider.isTrigger = true;
     }
 
     public void Initialize(Vector2 shootDirection, float damageAmount, State state)
@@ -42,13 +39,13 @@ public class MagicBullet : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (state == State.Single && collision.CompareTag("Monster"))
+        if (state == State.Single && collision.collider.CompareTag("Monster"))
         {
             speed = 0;
             animator.SetTrigger("Hit");
-            Monster monster = collision.GetComponent<Monster>();
+            Monster monster = collision.collider.GetComponent<Monster>();
             if (monster != null)
             {
                 monster.TakeDamage(damage);
@@ -56,7 +53,7 @@ public class MagicBullet : MonoBehaviour
             damage = 0;
             StartCoroutine(DeactivateAfterDelay(0.5f));
         }
-        else if (state == State.Range && collision.CompareTag("Monster"))
+        else if (state == State.Range && collision.collider.CompareTag("Monster"))
         {
             speed = 0;
             animator.SetTrigger("Hit");
@@ -73,6 +70,13 @@ public class MagicBullet : MonoBehaviour
                 }
             }
             damage = 0;
+            StartCoroutine(DeactivateAfterDelay(0.5f));
+        }
+        else if (collision.gameObject.layer != LayerMask.NameToLayer("Player"))
+        {
+            speed = 0;
+            damage = 0;
+            animator.SetTrigger("Hit");
             StartCoroutine(DeactivateAfterDelay(0.5f));
         }
     }

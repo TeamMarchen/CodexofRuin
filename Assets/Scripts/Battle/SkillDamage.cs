@@ -11,7 +11,8 @@ public class SkillDamage : MonoBehaviour
             Monster monster = collision.GetComponent<Monster>();
             if (monster != null)
             {
-                monster.TakeDamage(220);
+                Debug.Log("");
+                monster.TakeDamage(500);
             }
         }
     }

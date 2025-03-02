@@ -6,8 +6,8 @@ public class MonsterSpawner : MonoBehaviour
 {
     [Header("Spawn Settings")]
     private GameObject player;
-    public float minRadius = 10f;
-    public float maxRadius = 15f;
+    public float minRadius = 8f;
+    public float maxRadius = 10f;
 
     [Header("Spawning Parameters")]
     public float spawnInterval = 1f;
