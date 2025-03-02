@@ -1,23 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainSceneSetter : SceneSetter {
     // Start is called before the first frame update
-
-    [SerializeField] private GameObject MainUI;
     
+    [SerializeField] private Button startButton;
     protected override void Start()
     {
         base.Start();
-        GameObject mainuiObj = Instantiate(MainUI);
-
-        if (mainuiObj.TryGetComponent(out MainSceneUI mainSceneUI))
+        SoundManager.Instance.Play("BookofDoomDEMO",Enums.AUDIO_TYPE.BGM,true);
+        startButton.onClick.AddListener(() =>
         {
-            mainSceneUI.Init(() =>
-            {
-                
-            });
-        }
+            SoundManager.Instance.Play("SFX_Scifi_Computer_Loading_Glitch_Shorts2");
+        });
     }
 }
