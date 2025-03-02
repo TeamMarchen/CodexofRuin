@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PrologSelect.unity
     guid: 617a80d7fc234274fb818232d01a1b48
   - enabled: 1
+    path: Assets/Scenes/Prolog01.unity
+    guid: 508046300f665e044a7ce8f9f682701a
+  - enabled: 1
     path: Assets/Scenes/Prolog02.unity
     guid: 55aa0d8eae488c44a982cb51ca3aab26
   - enabled: 1
