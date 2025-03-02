@@ -16,4 +16,5 @@ MonoBehaviour:
   factionID: 5
   attack: 290
   defense: 240
-  description: '"A faction known for adaptability and resilience'
+  description: A faction known for adaptability and resilience, drawing power from
+    the vast oceans.

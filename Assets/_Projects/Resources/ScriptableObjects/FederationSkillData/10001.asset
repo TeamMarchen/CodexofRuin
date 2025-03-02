@@ -16,4 +16,5 @@ MonoBehaviour:
   factionID: 2
   attack: 280
   defense: 200
-  description: '"A faction known for its martial prowess and deep-rooted traditions'
+  description: A faction known for its martial prowess and deep-rooted traditions,
+    wielding the power of flame.

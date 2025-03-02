@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
@@ -89,8 +90,25 @@ public class GoogleSheetToSO : EditorWindow
             
         for (int i = 3; i < line.Length; ++i)
         {
-            ScriptableObject processedData = _makers[(int)type].ProcessData(line[i].Split(','),fullPath);
+            string[] dataSplit = DataSplit(line[i]);
+            ScriptableObject processedData = _makers[(int)type].ProcessData(dataSplit,fullPath);
             EditorUtility.SetDirty(processedData);
         }
+    }
+
+    private string[] DataSplit(string s_)
+    {
+        List<string> result = new List<string>();
+
+        // 정규식: 큰따옴표 내부 또는 쉼표로 구분된 값 추출
+        MatchCollection matches = Regex.Matches(s_, "\"([^\"]*)\"|([^,]+)");
+
+        foreach (Match match in matches)
+        {
+            // 큰따옴표 내부 값과 일반 값 구분하여 리스트에 추가
+            result.Add(match.Groups[1].Value != "" ? match.Groups[1].Value : match.Groups[2].Value);
+        }
+
+        return result.ToArray();
     }
 }

@@ -16,4 +16,5 @@ MonoBehaviour:
   factionID: 3
   attack: 260
   defense: 210
-  description: '"A faction that thrives in the shadows'
+  description: A faction that thrives in the shadows, using stealth and deception
+    to outmaneuver opponents.

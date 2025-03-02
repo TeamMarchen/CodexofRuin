@@ -16,4 +16,5 @@ MonoBehaviour:
   factionID: 4
   attack: 270
   defense: 230
-  description: '"A faction that upholds justice and order'
+  description: A faction that upholds justice and order, channeling divine light
+    to protect its people.

@@ -16,4 +16,5 @@ MonoBehaviour:
   factionID: 1
   attack: 250
   defense: 220
-  description: '"A faction that values balance and resilience'
+  description: A faction that values balance and resilience, drawing strength from
+    mountains and rivers.
