@@ -2,38 +2,24 @@ using Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Monster : MonoBehaviour
+public class Boss : MonoBehaviour
 {
     public MonsterData data;
     [SerializeField]
     private Transform target;
     private SpriteRenderer spriteRenderer;
 
-    [Header("Health Bar Settings")]
-    public GameObject healthBarPrefab;
-    private Image healthBarFill;
-    private GameObject healthBar;
-
     private float damageCooldown = 1f;
     private float lastDamageTime = 0f;
 
-    public bool IsBoss { get; private set; } = false;
-
-    public delegate void MonsterKilledHandler(Monster monster);
-    public event MonsterKilledHandler OnMonsterKilled;
+    public delegate void BossKilledHandler(Boss boss);
+    public event BossKilledHandler OnBossKilled;
 
     public void Initialize(MonsterData monsterData, Transform playerTarget)
     {
         data = monsterData;
         target = playerTarget;
-        data.hp = monsterData.hp; // 체력을 초기화
-
-        if (healthBar == null)
-        {
-            CreateHealthBar();
-        }
     }
 
     private void Awake()
@@ -56,49 +42,22 @@ public class Monster : MonoBehaviour
 
         Vector3 direction = (target.position - transform.position).normalized;
         transform.Translate(direction * data.speed * Time.deltaTime, Space.World);
-
-        UpdateHealthBar();
     }
 
     public void TakeDamage(float damage)
     {
-        data.hp -= damage;
+        data.hp -= damage - data.defense;
         if (data.hp <= 0)
         {
             Die();
         }
-        UpdateHealthBar();
     }
 
     private void Die()
     {
         gameObject.SetActive(false);
-        if (healthBar != null)
-        {
-            Destroy(healthBar);
-        }
-        PlayerStatus.Instance.curruntExp += 30;
-        OnMonsterKilled?.Invoke(this);
-    }
 
-    private void CreateHealthBar()
-    {
-        if (healthBarPrefab == null)
-        {
-            Debug.LogError("Health bar prefab is not assigned.");
-            return;
-        }
-        healthBar = Instantiate(healthBarPrefab, transform.position, Quaternion.identity, transform);
-        healthBar.transform.localPosition = new Vector3(0, -0.5f, 0); // 몬스터 하단에 위치
-        healthBarFill = healthBar.transform.Find("Fill").GetComponent<Image>();
-    }
-
-    private void UpdateHealthBar()
-    {
-        if (healthBarFill != null)
-        {
-            healthBarFill.fillAmount = data.curruntHp / data.hp;
-        }
+        OnBossKilled?.Invoke(this);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
