@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour 
+public class Monster : MonoBehaviour
 {
     public MonsterData data;
     [SerializeField]
@@ -11,15 +11,21 @@ public class Monster : MonoBehaviour
 
     private float damageCooldown = 1f;
     private float lastDamageTime = 0f;
-    public void Initialize(MonsterData monsterData, Transform playerTarget)
+
+    public bool IsBoss { get; private set; } = false;
+
+    public delegate void MonsterKilledHandler(Monster monster);
+    public event MonsterKilledHandler OnMonsterKilled;
+
+    public void Initialize(MonsterData monsterData, Transform playerTarget, bool isBoss = false)
     {
         data = monsterData;
         target = playerTarget;
+        IsBoss = isBoss;
     }
 
     private void Awake()
     {
-        // SpriteRenderer 컴포넌트 참조
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer == null)
         {
@@ -30,6 +36,7 @@ public class Monster : MonoBehaviour
     private void Update()
     {
         if (target == null) return;
+
         if (target.position.x > transform.position.x)
         {
             spriteRenderer.flipX = true;
@@ -38,6 +45,7 @@ public class Monster : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+
         Vector3 direction = (target.position - transform.position).normalized;
         transform.Translate(direction * data.speed * Time.deltaTime, Space.World);
     }
@@ -54,6 +62,10 @@ public class Monster : MonoBehaviour
     private void Die()
     {
         gameObject.SetActive(false);
+
+        OnMonsterKilled?.Invoke(this);
+
+        Debug.Log($"{(IsBoss ? "보스" : "일반")} 몬스터가 사망했습니다.");
     }
 
     private void OnTriggerStay2D(Collider2D collision)

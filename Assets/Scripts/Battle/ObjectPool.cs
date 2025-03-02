@@ -15,21 +15,23 @@ public class ObjectPool<T> where T : Component
 
         for (int i = 0; i < initialSize; i++)
         {
-            var obj = CreateNewObject();
+            T obj = CreateNewObject();
             pool.Add(obj);
         }
     }
 
     private T CreateNewObject()
     {
-        T newObj = Object.Instantiate(prefab, parent);
+        T newObj = Object.Instantiate(prefab);
+
+        // 인스턴스화 후에 부모를 설정
+        newObj.transform.SetParent(parent, false);
         newObj.gameObject.SetActive(false);
         return newObj;
     }
 
     public T Get(Vector3 position, Quaternion rotation)
     {
-        // 비활성화된 오브젝트를 우선적으로 찾음
         foreach (var obj in pool)
         {
             if (!obj.gameObject.activeInHierarchy)
@@ -39,7 +41,6 @@ public class ObjectPool<T> where T : Component
             }
         }
 
-        // 비활성화된 오브젝트가 없다면 새 오브젝트 생성
         T newObj = CreateNewObject();
         pool.Add(newObj);
         PrepareObject(newObj, position, rotation);

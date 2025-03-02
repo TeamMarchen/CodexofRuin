@@ -16,19 +16,21 @@ public class PlayerController : MonoBehaviour, IDamage
     private Vector2 moveInput;
     private Rigidbody2D rb;
     public MagicBullet magicBullet;
+    public GameObject fireSkill;
     private ObjectPool<MagicBullet> magicBulletPool;
+    private bool isSkillFirOnCooldown = false;
 
     private Coroutine attackCoroutine;
 
     private void Start()
     {
-        magicBulletPool = new ObjectPool<MagicBullet>(magicBullet, 10, transform);
-
-        attackCoroutine = StartCoroutine(AutoAttackRoutine());
+        
     }
     private void Awake()
     {
+        magicBulletPool = new ObjectPool<MagicBullet>(magicBullet, 5, transform);
         rb = GetComponent<Rigidbody2D>();
+        attackCoroutine = StartCoroutine(AutoAttackRoutine());
     }
 
     private void Update()
@@ -52,6 +54,8 @@ public class PlayerController : MonoBehaviour, IDamage
             moveInput.x -= 1;
         if (Input.GetKey(keySettings.rightKey))
             moveInput.x += 1;
+        if (Input.GetKey(keySettings.skillFirKey))
+            StartCoroutine(SkillFir());
 
         moveInput = moveInput.normalized;
     }
@@ -60,19 +64,36 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         Vector2 movement = moveInput * moveSpeed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + movement);
+        if (movement != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
+            rb.rotation = angle;
+        }
     }
 
     private IEnumerator AutoAttackRoutine()
     {
         while (true)
         {
-            // "Monster" 태그의 적이 존재할 때만 공격
             if (HasEnemies())
             {
                 Attack();
             }
             yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    private IEnumerator SkillFir()
+    {
+        if (isSkillFirOnCooldown) yield break;
+
+        isSkillFirOnCooldown = true;
+        fireSkill.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        fireSkill.SetActive(false);
+
+        yield return new WaitForSeconds(13f);
+        isSkillFirOnCooldown = false;
     }
 
     private bool HasEnemies()
@@ -88,8 +109,7 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             Vector2 shootDirection = (nearestEnemy.transform.position - this.transform.position).normalized;
             MagicBullet projectile = magicBulletPool.Get(this.transform.position, Quaternion.identity);
-
-            projectile.Initialize(shootDirection, 100);
+            projectile.Initialize(shootDirection, 100 , State.Range);
         }
     }
 
