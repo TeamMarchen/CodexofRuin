@@ -35,16 +35,18 @@ namespace Player
         private bool isSkillSecOnCooldown = false;
         private float skillFirCooldownTime = 15f;
         public float remainingFirCooldownTime = 0f;
-        private float skillSecCooldownTime = 15f;
+        private float skillSecCooldownTime = 30f;
         private float remainingSecCooldownTime = 0f;
         private Coroutine attackCoroutine;
+        private SpriteRenderer spriteRenderer;
 
         public void Initialize(Image skillFirCool, Image skillSecCool, Image skillThrCool,Image hp)
         {
             skillFirCooldownFill = skillFirCool;
             skillSecCooldownFill = skillSecCool;
             skillThrCooldownFill = skillThrCool;
-            
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
             skillThrCooldownFill.fillAmount = 0f;
             moveSpeed = PlayerStatus.Instance.speed;
             magicBulletPool = new ObjectPool<MagicBullet>(magicBullet, 5, transform);
@@ -93,10 +95,13 @@ namespace Player
         {
             Vector2 movement = moveInput * moveSpeed * Time.fixedDeltaTime;
             rb.MovePosition(rb.position + movement);
-            if (movement != Vector2.zero)
+            if (moveInput.x > 0)
             {
-                float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-                rb.rotation = angle;
+                spriteRenderer.flipX = true;
+            }
+            else
+            {
+                spriteRenderer.flipX = false;
             }
         }
 
