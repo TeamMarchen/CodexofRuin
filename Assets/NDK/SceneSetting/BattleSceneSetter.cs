@@ -13,6 +13,7 @@ public class BattleSceneSetter : SceneSetter
 
         GameObject stageManagerObj = Instantiate(_stageManager);
         SpecDataManager specDataManager = SpecDataManager.Instance;
+        PlayerStatus.Instance.Initialize(specDataManager.GetDataDictionary<PlayerDataSO>());
         if (stageManagerObj.TryGetComponent(out StageManager stageManager))
         {
             var monsterDataSos = specDataManager.GetDataDictionary<MonsterDataSO>();

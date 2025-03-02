@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalStages: 3
   timerText: {fileID: 0}
+  skillSelectionPanel: {fileID: 0}
+  characterFullImage: {fileID: 0}
   player: {fileID: 6621733183001624959, guid: f6ded63d35742c34a95074b154778d23, type: 3}
   spawner: {fileID: 5197771543628990911, guid: 3a017bca2fdda124f8525f80faf10702, type: 3}
-  camera: {fileID: 8637348967720220851, guid: 2e4590b380026434f962eb897d591f1a, type: 3}
+  camera: {fileID: 8651686315918124443, guid: 2e4590b380026434f962eb897d591f1a, type: 3}

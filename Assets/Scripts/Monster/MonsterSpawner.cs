@@ -114,10 +114,10 @@ public class MonsterSpawner : MonoBehaviour
             return;
         }
 
-        GameObject prefab = Resources.Load<GameObject>($"Monster/{monsterData.name}");
+        GameObject prefab = Resources.Load<GameObject>($"Prefebs/Monsters/{monsterData.monsterName}");
         if (prefab == null)
         {
-            Debug.LogError($"몬스터 프리팹을 찾을 수 없습니다: {monsterData.name}");
+            Debug.LogError($"몬스터 프리팹을 찾을 수 없습니다: {monsterData.monsterName}");
             return;
         }
 
@@ -150,7 +150,7 @@ public class MonsterSpawner : MonoBehaviour
         bossSpawned = true;
         ClearAllMonsters();
 
-        GameObject prefab = Resources.Load<GameObject>($"Monster/{bossDataSO.name}");
+        GameObject prefab = Resources.Load<GameObject>($"Prefebs/Monster/{bossDataSO.name}");
         if (prefab == null)
         {
             Debug.LogError($"보스 몬스터 프리팹을 찾을 수 없습니다: {bossDataSO.name}");

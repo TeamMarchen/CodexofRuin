@@ -48,7 +48,7 @@ public class StageManager : Singleton<StageManager>
     private bool isSkillActivated = false;
 
     private CharacterDataSO bossData;
-    private List<int> monsterId;
+    private List<int> monsterId = new List<int>();
     private int[] monsterCount;
     private IReadOnlyDictionary<int, MonsterDataSO> monsterData;
 
@@ -57,6 +57,7 @@ public class StageManager : Singleton<StageManager>
     {
         playerObject = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
         spawnerObject = Instantiate(spawner, new Vector3(0, 0, 0), Quaternion.identity);
+        camera = Instantiate(camera, new Vector3(0, 0, 0), Quaternion.identity);
 
         monsterSpawner = spawnerObject.GetComponent<MonsterSpawner>();
         monsterSpawner.OnMonsterKilled += HandleMonsterKilled;
@@ -75,7 +76,7 @@ public class StageManager : Singleton<StageManager>
         {
             foreach (var data in monsterDataSos_)
             {
-                if (data.Value.name == monsterName)
+                if (data.Value.monsterName.Equals(monsterName))
                 {
                     monsterId.Add(data.Key);
                     break;
@@ -88,6 +89,7 @@ public class StageManager : Singleton<StageManager>
         totalMonstersToKill = stageDataSos_.maxMonsterSpawnCount;
 
         playerController = playerObject.GetComponent<PlayerController>();
+
         camera.Setting(playerObject);
 
         StartCoroutine(StageRoutine());
