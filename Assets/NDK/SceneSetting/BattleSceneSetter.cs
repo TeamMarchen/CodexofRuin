@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class BattleSceneSetter : SceneSetter
     [SerializeField] private GameObject _stageManager;
     [SerializeField] private GameObject _playerHud;
     [SerializeField] private GameObject _map;
+
+    private SkillUI SkillUI;
     protected override void Start()
     {
         base.Start();
@@ -21,16 +24,15 @@ public class BattleSceneSetter : SceneSetter
         
         
         GameObject playerHudObj = Instantiate(_playerHud);
-        playerHudObj.SetActive(true);
-        if (_playerHud.TryGetComponent(out SkillUI skillUI))
+        if (playerHudObj.TryGetComponent(out SkillUI skillUI))
         {
-            PlayerStatus.Instance.OnLevelUp -= skillUI.Unlock;
+            skillUI.Initialize();
+            
             PlayerStatus.Instance.OnLevelUp += skillUI.Unlock;
             //PlayerStatus.Instance.OnHealthChanged += skillUI.OnHealthChanged;
             PlayerStatus.Instance.OnMpChanged += skillUI.OnMPChanged;
             PlayerStatus.Instance.OnExpChanged += skillUI.OnExpChanged;
             
-            PlayerStatus.Instance.curruntHp += 0;
             PlayerStatus.Instance.curruntMp += 0;
             PlayerStatus.Instance.curruntExp += 0;
         }
@@ -49,5 +51,12 @@ public class BattleSceneSetter : SceneSetter
 
         GameObject mapObj = Instantiate(_map);
         
+    }
+
+    private void OnDisable()
+    {
+        PlayerStatus.Instance.OnLevelUp -= SkillUI.Unlock;
+        PlayerStatus.Instance.OnMpChanged -= SkillUI.OnMPChanged;
+        PlayerStatus.Instance.OnExpChanged -= SkillUI.OnExpChanged;
     }
 }

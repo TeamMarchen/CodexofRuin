@@ -192,7 +192,6 @@ namespace Player
         {
             if (skillFirCooldownFill != null)
             {
-                Debug.Log(skillFirCooldownFill.fillAmount);
                 skillFirCooldownFill.fillAmount = remainingFirCooldownTime / skillFirCooldownTime;
             }
         }

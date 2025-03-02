@@ -17,7 +17,7 @@ public class PlayerStatus : Singleton<PlayerStatus>,IStatus
         }
     }
 
-    private float _currentHp;
+    private float _currentHp=0;
     public float mp { get; set; }
     public float curruntMp { 
         get => _currentMp;
@@ -27,7 +27,7 @@ public class PlayerStatus : Singleton<PlayerStatus>,IStatus
             OnMpChanged?.Invoke(_currentMp/(float)mp);
         } 
     }
-    private float _currentMp;
+    private float _currentMp=0;
     public float speed { get; set; }
     public float attackTime { get; set; }
     
@@ -45,7 +45,7 @@ public class PlayerStatus : Singleton<PlayerStatus>,IStatus
         }
     }
 
-    private int _currentExp;
+    private int _currentExp=0;
     public int maxExp { get; set; }
 
     public event Action<int> OnLevelUp;

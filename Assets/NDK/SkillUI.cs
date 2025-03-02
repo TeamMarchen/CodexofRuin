@@ -29,9 +29,9 @@ public class SkillUI : MonoBehaviour
         Debug.Assert(_skill2CoolTime);
         Debug.Assert(_skill3CoolTime);
         
-        _skillButton1.SetActive(false);
-        _skillButton2.SetActive(false);
-        _skillButton3.SetActive(false);
+        // _skillButton1.SetActive(false);
+        // _skillButton2.SetActive(false);
+        // _skillButton3.SetActive(false);
     }
 
     public void Unlock(int level)
