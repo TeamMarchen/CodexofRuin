@@ -12,7 +12,6 @@ public class SkillDamage : MonoBehaviour
             if (monster != null)
             {
                 monster.TakeDamage(220);
-                Debug.Log($"몬스터에게 {220} 피해를 입혔습니다.");
             }
         }
     }

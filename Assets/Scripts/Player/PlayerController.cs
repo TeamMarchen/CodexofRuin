@@ -40,6 +40,7 @@ namespace Player
             magicBulletPool = new ObjectPool<MagicBullet>(magicBullet, 5, transform);
             rb = GetComponent<Rigidbody2D>();
             attackCoroutine = StartCoroutine(AutoAttackRoutine());
+            Debug.Log("어택 시작");
         }
 
         private void Update()
@@ -100,7 +101,6 @@ namespace Player
 
             if (PlayerStatus.Instance.curruntMp < 20)
             {
-                Debug.Log("마나가 부족합니다!");
                 yield break;
             }
 
@@ -187,6 +187,7 @@ namespace Player
         public void TakeDamage(float damage)
         {
             PlayerStatus.Instance.curruntHp -= damage - PlayerStatus.Instance.defense;
+            Debug.Log(damage - PlayerStatus.Instance.defense);
             if (PlayerStatus.Instance.curruntHp <= 0)
             {
                 Die();

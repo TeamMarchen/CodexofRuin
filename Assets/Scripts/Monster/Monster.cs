@@ -12,9 +12,7 @@ public class Monster : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     [Header("Health Bar Settings")]
-    public GameObject healthBarPrefab;
-    private Image healthBarFill;
-    private GameObject healthBar;
+    public Image healthBarFill;
 
     private float damageCooldown = 1f;
     private float lastDamageTime = 0f;
@@ -29,11 +27,7 @@ public class Monster : MonoBehaviour
         data = monsterData;
         target = playerTarget;
         data.hp = monsterData.hp; // 체력을 초기화
-
-        if (healthBar == null)
-        {
-            CreateHealthBar();
-        }
+        UpdateHealthBar();
     }
 
     private void Awake()
@@ -73,24 +67,8 @@ public class Monster : MonoBehaviour
     private void Die()
     {
         gameObject.SetActive(false);
-        if (healthBar != null)
-        {
-            Destroy(healthBar);
-        }
         PlayerStatus.Instance.curruntExp += 30;
         OnMonsterKilled?.Invoke(this);
-    }
-
-    private void CreateHealthBar()
-    {
-        if (healthBarPrefab == null)
-        {
-            Debug.LogError("Health bar prefab is not assigned.");
-            return;
-        }
-        healthBar = Instantiate(healthBarPrefab, transform.position, Quaternion.identity, transform);
-        healthBar.transform.localPosition = new Vector3(0, -0.5f, 0); // 몬스터 하단에 위치
-        healthBarFill = healthBar.transform.Find("Fill").GetComponent<Image>();
     }
 
     private void UpdateHealthBar()
