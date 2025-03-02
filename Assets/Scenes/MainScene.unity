@@ -734,6 +734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartImage
       objectReference: {fileID: 0}
+    - target: {fileID: 4507133353775393944, guid: a39e9851564b14a44b5b55de1d9134be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4808718518973618137, guid: a39e9851564b14a44b5b55de1d9134be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
