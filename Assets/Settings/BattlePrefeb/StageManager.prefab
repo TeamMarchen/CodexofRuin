@@ -53,3 +53,4 @@ MonoBehaviour:
   camera: {fileID: 8651686315918124443, guid: 2e4590b380026434f962eb897d591f1a, type: 3}
   readerSkill: {fileID: 4784674268603008361, guid: cb1a7070d5c7e1d49b8c1e1a011eb551, type: 3}
   reader: {fileID: 0}
+  badEnd: {fileID: 2809815859141966919, guid: fbacf3111156b9147b24e6961b40109a, type: 3}

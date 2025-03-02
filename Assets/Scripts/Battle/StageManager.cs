@@ -39,6 +39,7 @@ public class StageManager : Singleton<StageManager>
 
     public GameObject readerSkill;
     public GameObject reader;
+    public GameObject badEnd;
 
     private int totalMonstersToKill = 2000;
     private int killedMonsters = 0;
@@ -167,7 +168,8 @@ public class StageManager : Singleton<StageManager>
 
             if (isStageFailed)
             {
-
+                Instantiate(badEnd, new Vector3(0, 0, 0), Quaternion.identity);
+                yield return new WaitForSeconds(1f);
                 SceneManager.LoadScene("StartScene");
                 break;
             }
