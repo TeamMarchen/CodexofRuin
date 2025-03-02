@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd00a1372104da98cfb35945383c147, type: 3}
+  m_Name: 1004
+  m_EditorClassIdentifier: 
+  id: 1004
+  playerName: Player
+  level: 4
+  hp: 1600
+  attack: 160
+  defense: 80
+  mp: 260
