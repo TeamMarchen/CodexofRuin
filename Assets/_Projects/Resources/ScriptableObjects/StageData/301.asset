@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3794b8bab5234553a5119bc24f618a48, type: 3}
+  m_Name: 301
+  m_EditorClassIdentifier: 
+  id: 301
+  wave: 1
+  monsterSpawnRate: 0500000003000000
+  monsterType:
+  - Didi
+  - Ridi
+  bossType: Bai Hayeon
+  element: 4
+  timeLimit: 150
+  maxMonsterSpawnCount: 2000
+  bossClearTime: 90
