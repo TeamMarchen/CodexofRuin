@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//ÇÁ·Ñ·Î±×¿¡¼­ Ä³¸¯ÅÍ ¼±ÅÃ UI¿¡¼­ÀÇ ¾À ³Ñ±â±â
+//ï¿½ï¿½ï¿½Ñ·Î±×¿ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ñ±ï¿½ï¿½
 public class TutorialCharacterSelectScene : MonoBehaviour
 {
     public void OnClickStart()
@@ -17,6 +18,13 @@ public class TutorialCharacterSelectScene : MonoBehaviour
 
     public void StartGo()
     {
-        SceneManager.LoadScene("MainScene");
+        StartCoroutine(DelayGo());
+    }
+
+    private IEnumerator DelayGo()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SoundManager.Instance.StopBGM();
+        SceneManager.LoadScene("Prolog01");
     }
 }
