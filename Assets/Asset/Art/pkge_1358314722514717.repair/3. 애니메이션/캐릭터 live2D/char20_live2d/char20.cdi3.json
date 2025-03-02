@@ -1,0 +1,133 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "eye",
+			"GroupId": "",
+			"Name": "눈깜빡"
+		},
+		{
+			"Id": "head_x",
+			"GroupId": "",
+			"Name": "얼굴_x"
+		},
+		{
+			"Id": "head_y",
+			"GroupId": "",
+			"Name": "얼굴_y"
+		},
+		{
+			"Id": "body_x",
+			"GroupId": "",
+			"Name": "몸_x"
+		},
+		{
+			"Id": "body_y",
+			"GroupId": "",
+			"Name": "몸_y"
+		},
+		{
+			"Id": "line",
+			"GroupId": "",
+			"Name": "끈"
+		},
+		{
+			"Id": "body_u",
+			"GroupId": "",
+			"Name": "하체"
+		},
+		{
+			"Id": "leg",
+			"GroupId": "",
+			"Name": "다리"
+		},
+		{
+			"Id": "tail",
+			"GroupId": "",
+			"Name": "꼬리"
+		},
+		{
+			"Id": "durdeme",
+			"GroupId": "",
+			"Name": "더듬이"
+		},
+		{
+			"Id": "smoke",
+			"GroupId": "",
+			"Name": "먼지"
+		},
+		{
+			"Id": "arm_L",
+			"GroupId": "",
+			"Name": "왼팔"
+		},
+		{
+			"Id": "arm_r",
+			"GroupId": "",
+			"Name": "오른팔"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part",
+			"Name": "ﾀﾎｹｰ"
+		},
+		{
+			"Id": "Part2",
+			"Name": "Group 4"
+		},
+		{
+			"Id": "Part3",
+			"Name": "ｿﾀｸ･ﾆﾈ"
+		},
+		{
+			"Id": "Part4",
+			"Name": "ﾀﾚﾄﾏ"
+		},
+		{
+			"Id": "Part5",
+			"Name": "ｻ�ﾃｼ"
+		},
+		{
+			"Id": "Part6",
+			"Name": "ｵﾎｻ�"
+		},
+		{
+			"Id": "Part10",
+			"Name": "ﾇ羣ｮｶ�"
+		},
+		{
+			"Id": "Part11",
+			"Name": "ﾇﾏﾃｼ"
+		},
+		{
+			"Id": "Part15",
+			"Name": "ｿﾞﾆﾈ"
+		},
+		{
+			"Id": "Part7",
+			"Name": "Group 8"
+		},
+		{
+			"Id": "Part8",
+			"Name": "Group 6"
+		},
+		{
+			"Id": "Part9",
+			"Name": "Group 7"
+		},
+		{
+			"Id": "Part12",
+			"Name": "ｴﾙｸｮ"
+		},
+		{
+			"Id": "Part14",
+			"Name": "Group 9"
+		},
+		{
+			"Id": "Part13",
+			"Name": "Group 10"
+		}
+	]
+}

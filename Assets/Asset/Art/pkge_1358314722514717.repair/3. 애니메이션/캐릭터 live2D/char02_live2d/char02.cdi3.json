@@ -1,0 +1,168 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "PARAM_FACE",
+			"GroupId": "",
+			"Name": "얼굴"
+		},
+		{
+			"Id": "PARAM_BODY",
+			"GroupId": "",
+			"Name": "몸통"
+		},
+		{
+			"Id": "PARAM_HAIR",
+			"GroupId": "",
+			"Name": "머리카락"
+		},
+		{
+			"Id": "PARAM_EYE_L_OPEN",
+			"GroupId": "",
+			"Name": "왼쪽 눈 깜빡임"
+		},
+		{
+			"Id": "PARAM_EYE_R_OPEN",
+			"GroupId": "",
+			"Name": "오른쪽 눈 깜빡임"
+		},
+		{
+			"Id": "PARAM_RIBBON",
+			"GroupId": "",
+			"Name": "리본"
+		},
+		{
+			"Id": "PARAM_CLOTH_BACK",
+			"GroupId": "",
+			"Name": "뒷자락"
+		},
+		{
+			"Id": "PARAM_RIGHT_HAND",
+			"GroupId": "",
+			"Name": "오른손"
+		},
+		{
+			"Id": "PARAM_RIGHT_ARM",
+			"GroupId": "",
+			"Name": "오른팔"
+		},
+		{
+			"Id": "PARAM_RIGHT_HAND_DETAIL",
+			"GroupId": "",
+			"Name": "오른손붕대"
+		},
+		{
+			"Id": "PARAM_LEFT_LEG",
+			"GroupId": "",
+			"Name": "왼다리"
+		},
+		{
+			"Id": "PARAM_LEFT_HAND",
+			"GroupId": "",
+			"Name": "왼손"
+		},
+		{
+			"Id": "PARAM_RIGHT_LEG",
+			"GroupId": "",
+			"Name": "오른다리"
+		},
+		{
+			"Id": "PARAM_EFFECT",
+			"GroupId": "",
+			"Name": "효과"
+		},
+		{
+			"Id": "PARAM_EFFECT2",
+			"GroupId": "",
+			"Name": "효과2"
+		},
+		{
+			"Id": "PARAM_EFFECT3",
+			"GroupId": "",
+			"Name": "효과3"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "PARTS_EFFECT",
+			"Name": "효과"
+		},
+		{
+			"Id": "PARTS_LEG_RIGHT",
+			"Name": "오른다리"
+		},
+		{
+			"Id": "PARTS_LEG_LEFT",
+			"Name": "왼다리"
+		},
+		{
+			"Id": "PARTS_HAND_RIGHT",
+			"Name": "오른손"
+		},
+		{
+			"Id": "PARTS_ARM_RIGHT",
+			"Name": "오른팔"
+		},
+		{
+			"Id": "PARTS_ARM_LEFT",
+			"Name": "왼팔"
+		},
+		{
+			"Id": "PARTS_01_SKETCH",
+			"Name": "[밑그림]"
+		},
+		{
+			"Id": "PARTS_01_BACKGROUND",
+			"Name": "배경"
+		},
+		{
+			"Id": "PARTS_01_BODY",
+			"Name": "몸"
+		},
+		{
+			"Id": "PARTS_01_NECK",
+			"Name": "목"
+		},
+		{
+			"Id": "PARTS_01_HAIR_BACK_001",
+			"Name": "뒷머리"
+		},
+		{
+			"Id": "PARTS_01_HAIR_SIDE_001",
+			"Name": "옆 머리"
+		},
+		{
+			"Id": "PARTS_01_HAIR_FRONT_001",
+			"Name": "앞머리"
+		},
+		{
+			"Id": "PARTS_01_EAR_001",
+			"Name": "귀"
+		},
+		{
+			"Id": "PARTS_01_BROW_001",
+			"Name": "눈썹"
+		},
+		{
+			"Id": "PARTS_01_EYE_BALL_001",
+			"Name": "눈알"
+		},
+		{
+			"Id": "PARTS_01_EYE_001",
+			"Name": "눈"
+		},
+		{
+			"Id": "PARTS_01_FACE_001",
+			"Name": "얼굴"
+		},
+		{
+			"Id": "ROUGH",
+			"Name": "러프"
+		},
+		{
+			"Id": "PSD1",
+			"Name": "PSD1"
+		}
+	]
+}

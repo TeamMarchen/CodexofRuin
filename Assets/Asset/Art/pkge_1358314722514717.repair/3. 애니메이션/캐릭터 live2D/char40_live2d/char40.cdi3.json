@@ -1,0 +1,86 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "head"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "eye"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "hat_acc"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "arm_right"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "body"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "skirt_under"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "skirt_upper"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "arm_left"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "foot_left"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "foot_right"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "hat",
+			"Name": "hat"
+		},
+		{
+			"Id": "head",
+			"Name": "head"
+		},
+		{
+			"Id": "arm_right",
+			"Name": "arm_right"
+		},
+		{
+			"Id": "body",
+			"Name": "body"
+		},
+		{
+			"Id": "skirt",
+			"Name": "skirt"
+		},
+		{
+			"Id": "leg_left",
+			"Name": "leg_left"
+		},
+		{
+			"Id": "leg_right",
+			"Name": "leg_right"
+		}
+	]
+}

@@ -1,0 +1,88 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "head"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "mouth"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "cloth"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "body"
+		},
+		{
+			"Id": "Param12",
+			"GroupId": "",
+			"Name": "right_arm"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "ribbon"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "effect"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "effect2"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "",
+			"Name": "effect3"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "ribbon2"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "left_leg"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "right_leg"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "chara",
+			"Name": "chara"
+		},
+		{
+			"Id": "left_arm",
+			"Name": "left_arm"
+		},
+		{
+			"Id": "right_arm",
+			"Name": "right_arm"
+		},
+		{
+			"Id": "acc",
+			"Name": "acc"
+		},
+		{
+			"Id": "under",
+			"Name": "under"
+		}
+	]
+}

@@ -1,0 +1,145 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "PARAM_EYE_L_OPEN",
+			"GroupId": "",
+			"Name": "왼쪽 눈 깜빡임"
+		},
+		{
+			"Id": "PARAM_EYE_R_OPEN",
+			"GroupId": "",
+			"Name": "오른쪽 눈 깜빡임"
+		},
+		{
+			"Id": "PARAM_HAIR_FRONT",
+			"GroupId": "",
+			"Name": "앞머리"
+		},
+		{
+			"Id": "PARAM_HAIR_SIDE",
+			"GroupId": "",
+			"Name": "옆머리"
+		},
+		{
+			"Id": "PARAM_HAIR_BACK",
+			"GroupId": "",
+			"Name": "뒷머리"
+		},
+		{
+			"Id": "PARAM_FACE",
+			"GroupId": "",
+			"Name": "얼굴"
+		},
+		{
+			"Id": "PARAM_BODY",
+			"GroupId": "",
+			"Name": "몸"
+		},
+		{
+			"Id": "PARAM_LEFT_ARM",
+			"GroupId": "",
+			"Name": "왼팔"
+		},
+		{
+			"Id": "PARAM_RIGHT_ARM",
+			"GroupId": "",
+			"Name": "오른팔"
+		},
+		{
+			"Id": "PARAM_RIBBON",
+			"GroupId": "",
+			"Name": "리본"
+		},
+		{
+			"Id": "PARAM_EFFECT",
+			"GroupId": "",
+			"Name": "효과"
+		},
+		{
+			"Id": "PARAM_EFFECT2",
+			"GroupId": "",
+			"Name": "효과2"
+		},
+		{
+			"Id": "PARAM_EFFECT3",
+			"GroupId": "",
+			"Name": "효과3"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "PARTS_ACC2",
+			"Name": "악세사리_2"
+		},
+		{
+			"Id": "PARTS_ACC",
+			"Name": "악세사리"
+		},
+		{
+			"Id": "PARTS_FIN",
+			"Name": "지느러미"
+		},
+		{
+			"Id": "PARTS_TAIL",
+			"Name": "꼬리"
+		},
+		{
+			"Id": "PARTS_LEG",
+			"Name": "다리"
+		},
+		{
+			"Id": "PARTS_RIGHT_ARM",
+			"Name": "오른팔"
+		},
+		{
+			"Id": "PARTS_LEFT_ARM",
+			"Name": "왼팔"
+		},
+		{
+			"Id": "PARTS_01_EFFECT",
+			"Name": "효과"
+		},
+		{
+			"Id": "PARTS_01_BODY",
+			"Name": "몸"
+		},
+		{
+			"Id": "PARTS_01_HAIR_BACK_001",
+			"Name": "뒷머리"
+		},
+		{
+			"Id": "PARTS_01_HAIR_SIDE_001",
+			"Name": "옆 머리"
+		},
+		{
+			"Id": "PARTS_01_HAIR_FRONT_001",
+			"Name": "앞머리"
+		},
+		{
+			"Id": "PARTS_01_NOSE_001",
+			"Name": "코"
+		},
+		{
+			"Id": "PARTS_01_BROW_001",
+			"Name": "눈썹"
+		},
+		{
+			"Id": "PARTS_01_EYE_BALL_001",
+			"Name": "눈알"
+		},
+		{
+			"Id": "PARTS_01_EYE_001",
+			"Name": "눈"
+		},
+		{
+			"Id": "PARTS_01_FACE_001",
+			"Name": "얼굴"
+		},
+		{
+			"Id": "PSD",
+			"Name": "PSD"
+		}
+	]
+}

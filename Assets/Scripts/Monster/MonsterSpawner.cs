@@ -87,7 +87,7 @@ public class MonsterSpawner : MonoBehaviour
             {
                 SpawnMonsters(currentSpawnCount);
             }
-            else if (!bossSpawned && killedMonsters == maxMonsters)
+            else if (!bossSpawned)
             {
                 SpawnBoss();
             }
@@ -149,11 +149,11 @@ public class MonsterSpawner : MonoBehaviour
     {
         bossSpawned = true;
         ClearAllMonsters();
-        Debug.Log(bossDataSO.characterName);
-        GameObject prefab = Resources.Load<GameObject>($"Prefebs/Monsters/{bossDataSO.characterName}");
+
+        GameObject prefab = Resources.Load<GameObject>($"Prefebs/Monster/{bossDataSO.name}");
         if (prefab == null)
         {
-            Debug.LogError($"보스 몬스터 프리팹을 찾을 수 없습니다: {bossDataSO.characterName}");
+            Debug.LogError($"보스 몬스터 프리팹을 찾을 수 없습니다: {bossDataSO.name}");
             return;
         }
 
@@ -162,11 +162,11 @@ public class MonsterSpawner : MonoBehaviour
         Boss boss = bossObject.GetComponent<Boss>();
         if (boss == null)
         {
-            Debug.LogError($"Boss 컴포넌트를 찾을 수 없습니다: {bossDataSO.characterName}");
+            Debug.LogError($"Boss 컴포넌트를 찾을 수 없습니다: {bossDataSO.name}");
             Destroy(bossObject);
             return;
         }
-        MonsterData bossData = new MonsterData(bossDataSO.level, bossDataSO.characterName, bossDataSO.maxHP, 2f,1f,5f, bossDataSO.attack, null,100, bossDataSO.defense);
+        MonsterData bossData = new MonsterData(bossDataSO.level, bossDataSO.name, bossDataSO.maxHP, 2f,1f,5f, bossDataSO.attack, null,100, bossDataSO.defense);
         boss.Initialize(bossData, player.transform);
         boss.OnBossKilled += HandleBossKilled;
         Debug.Log("보스 몬스터가 스폰되었습니다!");

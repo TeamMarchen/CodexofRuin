@@ -46,13 +46,9 @@ public class MagicBullet : MonoBehaviour
             speed = 0;
             animator.SetTrigger("Hit");
             Monster monster = collision.collider.GetComponent<Monster>();
-            Boss boss = collision.collider.GetComponent<Boss>();
             if (monster != null)
             {
                 monster.TakeDamage(damage);
-            } else if (boss != null)
-            {
-                boss.TakeDamage(damage);
             }
             damage = 0;
             StartCoroutine(DeactivateAfterDelay(0.5f));
@@ -66,15 +62,10 @@ public class MagicBullet : MonoBehaviour
             {
                 if (hitCollider.CompareTag("Monster"))
                 {
-                    Monster monster = collision.collider.GetComponent<Monster>();
-                    Boss boss = collision.collider.GetComponent<Boss>();
+                    Monster monster = hitCollider.GetComponent<Monster>();
                     if (monster != null)
                     {
                         monster.TakeDamage(damage);
-                    }
-                    else if (boss != null)
-                    {
-                        boss.TakeDamage(damage);
                     }
                 }
             }

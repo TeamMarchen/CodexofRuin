@@ -1,0 +1,101 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "eye",
+			"GroupId": "",
+			"Name": "눈깜빡"
+		},
+		{
+			"Id": "leg_L",
+			"GroupId": "",
+			"Name": "왼다리"
+		},
+		{
+			"Id": "clothes_u",
+			"GroupId": "",
+			"Name": "아래천"
+		},
+		{
+			"Id": "white_line",
+			"GroupId": "",
+			"Name": "장신구_흰전"
+		},
+		{
+			"Id": "red_line",
+			"GroupId": "",
+			"Name": "장신구_빨강"
+		},
+		{
+			"Id": "arm_R",
+			"GroupId": "",
+			"Name": "오른팔"
+		},
+		{
+			"Id": "arm_L",
+			"GroupId": "",
+			"Name": "왼팔"
+		},
+		{
+			"Id": "fire",
+			"GroupId": "",
+			"Name": "불꽃"
+		},
+		{
+			"Id": "smoke",
+			"GroupId": "",
+			"Name": "연기"
+		},
+		{
+			"Id": "head_x",
+			"GroupId": "",
+			"Name": "얼굴_x"
+		},
+		{
+			"Id": "head_y",
+			"GroupId": "",
+			"Name": "얼굴_y"
+		},
+		{
+			"Id": "body_x",
+			"GroupId": "",
+			"Name": "몸통_x"
+		},
+		{
+			"Id": "body_y",
+			"GroupId": "",
+			"Name": "몸통_y"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part",
+			"Name": "Group 3"
+		},
+		{
+			"Id": "Part2",
+			"Name": "Group 4"
+		},
+		{
+			"Id": "Part3",
+			"Name": "Group 5"
+		},
+		{
+			"Id": "Part4",
+			"Name": "Group 6"
+		},
+		{
+			"Id": "Part5",
+			"Name": "Group 7"
+		},
+		{
+			"Id": "Part6",
+			"Name": "ｿﾞﾂﾊｴｫ"
+		},
+		{
+			"Id": "Part7",
+			"Name": "ｿﾀｸ･ﾂﾊｴｫ"
+		}
+	]
+}

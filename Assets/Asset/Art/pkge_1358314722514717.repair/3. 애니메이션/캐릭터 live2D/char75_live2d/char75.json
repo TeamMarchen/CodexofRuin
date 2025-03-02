@@ -1,0 +1,9 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "부월수귀.moc3",
+		"Textures": [
+			"부월수귀.512/texture_00.png"
+		]
+	}
+}

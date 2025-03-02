@@ -1,0 +1,83 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "head"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "",
+			"Name": "eye"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "hair"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "body"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "arm_left"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "hand_right"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "cloth"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "leg_left"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "leg_right"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "back"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "effect"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "head",
+			"Name": "head"
+		},
+		{
+			"Id": "hand_left",
+			"Name": "hand_left"
+		},
+		{
+			"Id": "leg_left",
+			"Name": "leg_left"
+		},
+		{
+			"Id": "arm_right",
+			"Name": "arm_right"
+		},
+		{
+			"Id": "leg_right",
+			"Name": "leg_right"
+		}
+	]
+}

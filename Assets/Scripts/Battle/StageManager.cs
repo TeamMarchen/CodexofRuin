@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class StageManager : Singleton<StageManager>
 {
     [Header("Stage Settings")]
-    private int totalStages = 1;
+    public int totalStages = 1;
     private float STAGETIME = 150f;
     private float BOSSTIME = 150f;
     private float RESTTIME = 10f;
@@ -74,7 +74,7 @@ public class StageManager : Singleton<StageManager>
         monsterData = monsterDataSos_;
         foreach (var data in characterDataSos_)
         {
-            if (data.Value.characterName.Equals(stageDataSos_.bossType))
+            if (data.Value.name == stageDataSos_.bossType)
             {
                 bossData = data.Value;
                 break;
@@ -115,6 +115,8 @@ public class StageManager : Singleton<StageManager>
 
     private IEnumerator StageRoutine()
     {
+        while (currentStage < totalStages && !isStageFailed)
+        {
             currentStage++;
             killedMonsters = 0;
             bossDefeated = false;
@@ -166,12 +168,13 @@ public class StageManager : Singleton<StageManager>
             if (isStageFailed)
             {
                 Debug.Log("스테이지 실패!");
-            SceneManager.LoadScene("MainScene");
-        }
+                break;
+            }
 
             isResting = true;
             yield return new WaitForSeconds(RESTTIME);
             isResting = false;
+        }
 
         if (!isStageFailed)
         {

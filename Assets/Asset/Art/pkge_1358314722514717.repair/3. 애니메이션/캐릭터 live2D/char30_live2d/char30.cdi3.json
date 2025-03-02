@@ -1,0 +1,73 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "head"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "eye"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "hair"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "arm_right"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "ribbon"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "body"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "arm_right"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "knife"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "effect"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "arm_right",
+			"Name": "arm_right"
+		},
+		{
+			"Id": "body_upper",
+			"Name": "body_upper"
+		},
+		{
+			"Id": "skirt",
+			"Name": "skirt"
+		},
+		{
+			"Id": "arm_right2",
+			"Name": "arm_right"
+		},
+		{
+			"Id": "head",
+			"Name": "head"
+		}
+	]
+}
