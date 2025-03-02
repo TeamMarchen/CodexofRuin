@@ -1,0 +1,60 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "head"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "hair"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "sword"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "foot_left"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "foot_right"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "body"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "eye"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "arm_right"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "head",
+			"Name": "head"
+		},
+		{
+			"Id": "leg_left",
+			"Name": "leg_left"
+		},
+		{
+			"Id": "leg_right",
+			"Name": "leg_right"
+		}
+	]
+}

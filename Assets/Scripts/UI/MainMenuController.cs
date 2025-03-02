@@ -40,7 +40,7 @@ public class MainMenuController : MonoBehaviour
     void OnPlayClicked()
     {
         Debug.Log("게임 시작!");
-        SceneManager.LoadScene("Tutorial01");
+        SceneManager.LoadScene("Prolog01");
     }
 
     void OnSettingsClicked()

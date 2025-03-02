@@ -1,0 +1,149 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "PARAM_ANGLE_X",
+			"GroupId": "",
+			"Name": "몸체"
+		},
+		{
+			"Id": "PARAM_ANGLE_Y",
+			"GroupId": "",
+			"Name": "왼팔"
+		},
+		{
+			"Id": "PARAM_ANGLE_Z",
+			"GroupId": "",
+			"Name": "각도 Z"
+		},
+		{
+			"Id": "PARAM_EYE_L_OPEN",
+			"GroupId": "",
+			"Name": "왼쪽 눈 깜빡임"
+		},
+		{
+			"Id": "PARAM_EYE_R_OPEN",
+			"GroupId": "",
+			"Name": "오른쪽 눈 깜빡임"
+		},
+		{
+			"Id": "PARAM_BODY_ANGLE_X",
+			"GroupId": "",
+			"Name": "리본"
+		},
+		{
+			"Id": "PARAM_BODY_ANGLE_Y",
+			"GroupId": "",
+			"Name": "몸의 회전 Y"
+		},
+		{
+			"Id": "PARAM_BODY_ANGLE_Z",
+			"GroupId": "",
+			"Name": "몸의 회전 Z"
+		},
+		{
+			"Id": "PARAM_BREATH",
+			"GroupId": "",
+			"Name": "호흡"
+		},
+		{
+			"Id": "PARAM_BODY_ARM_R",
+			"GroupId": "",
+			"Name": "오른팔"
+		},
+		{
+			"Id": "PARAM_effect_front",
+			"GroupId": "",
+			"Name": "effect"
+		},
+		{
+			"Id": "PARAM_effect_back",
+			"GroupId": "",
+			"Name": "effect2"
+		},
+		{
+			"Id": "PARAM_BODY_ARM_R_2",
+			"GroupId": "",
+			"Name": "오른팔호흡"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "PARTS_01_BODY_LEG",
+			"Name": "leg"
+		},
+		{
+			"Id": "PARTS_01_BODY_ARM",
+			"Name": "arm"
+		},
+		{
+			"Id": "PARTS_01_EFFECT",
+			"Name": "effect"
+		},
+		{
+			"Id": "PARTS_01_SKETCH",
+			"Name": "[밑그림]"
+		},
+		{
+			"Id": "PARTS_01_BACKGROUND",
+			"Name": "배경"
+		},
+		{
+			"Id": "PARTS_01_BODY",
+			"Name": "몸"
+		},
+		{
+			"Id": "PARTS_01_NECK",
+			"Name": "목"
+		},
+		{
+			"Id": "PARTS_01_HAIR_BACK_001",
+			"Name": "뒷머리"
+		},
+		{
+			"Id": "PARTS_01_HAIR_SIDE_001",
+			"Name": "옆 머리"
+		},
+		{
+			"Id": "PARTS_01_HAIR_FRONT_001",
+			"Name": "앞머리"
+		},
+		{
+			"Id": "PARTS_01_EAR_001",
+			"Name": "귀"
+		},
+		{
+			"Id": "PARTS_01_NOSE_001",
+			"Name": "코"
+		},
+		{
+			"Id": "PARTS_01_MOUTH_001",
+			"Name": "입"
+		},
+		{
+			"Id": "PARTS_01_BROW_001",
+			"Name": "눈썹"
+		},
+		{
+			"Id": "PARTS_01_EYE_BALL_001",
+			"Name": "눈알"
+		},
+		{
+			"Id": "PARTS_01_EYE_001",
+			"Name": "눈"
+		},
+		{
+			"Id": "PARTS_01_FACE_001",
+			"Name": "얼굴"
+		},
+		{
+			"Id": "ROUGH",
+			"Name": "러프"
+		},
+		{
+			"Id": "PSD",
+			"Name": "PSD"
+		}
+	]
+}

@@ -1,0 +1,92 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "eye",
+			"GroupId": "",
+			"Name": "눈깜빡"
+		},
+		{
+			"Id": "head_x",
+			"GroupId": "",
+			"Name": "얼굴_x"
+		},
+		{
+			"Id": "head_y",
+			"GroupId": "",
+			"Name": "얼굴_y"
+		},
+		{
+			"Id": "body_x",
+			"GroupId": "",
+			"Name": "몸_x"
+		},
+		{
+			"Id": "body_y",
+			"GroupId": "",
+			"Name": "몸_y"
+		},
+		{
+			"Id": "leg",
+			"GroupId": "",
+			"Name": "하체 움직임"
+		},
+		{
+			"Id": "long_c",
+			"GroupId": "",
+			"Name": "기다란천"
+		},
+		{
+			"Id": "big_c",
+			"GroupId": "",
+			"Name": "큰천"
+		},
+		{
+			"Id": "hand_R",
+			"GroupId": "",
+			"Name": "오른손"
+		},
+		{
+			"Id": "hand_L",
+			"GroupId": "",
+			"Name": "왼손"
+		},
+		{
+			"Id": "snake",
+			"GroupId": "",
+			"Name": "뱀"
+		},
+		{
+			"Id": "smoke",
+			"GroupId": "",
+			"Name": "연기"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part",
+			"Name": "Group 1"
+		},
+		{
+			"Id": "Part2",
+			"Name": "Group 3"
+		},
+		{
+			"Id": "Part3",
+			"Name": "Group 4"
+		},
+		{
+			"Id": "Part4",
+			"Name": "Group 5"
+		},
+		{
+			"Id": "Part5",
+			"Name": "Group 6"
+		},
+		{
+			"Id": "Part6",
+			"Name": "Group 7"
+		}
+	]
+}

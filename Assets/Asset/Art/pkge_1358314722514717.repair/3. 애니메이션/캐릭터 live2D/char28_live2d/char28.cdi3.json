@@ -1,0 +1,79 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "eye"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "head"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "mask"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "mask2"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "body"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "ribbon"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "left_arm"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "skirt"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "right_arm"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "light"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "",
+			"Name": "effect"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part",
+			"Name": "psd"
+		},
+		{
+			"Id": "Part3",
+			"Name": "head"
+		},
+		{
+			"Id": "Part6",
+			"Name": "body"
+		},
+		{
+			"Id": "Part7",
+			"Name": "skirt"
+		}
+	]
+}

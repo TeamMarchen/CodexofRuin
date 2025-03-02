@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public enum Speaker { MI = 0, KO }
+public enum Speaker { Kim = 0, KO =1,Nar }
 
 public class DialogSystem : MonoBehaviour
 {
@@ -21,11 +21,12 @@ public class DialogSystem : MonoBehaviour
 	private	float				typingSpeed;					// 텍스트 타이핑 효과의 재생 속도
 	[SerializeField]
 	private	KeyCode				keyCodeSkip = KeyCode.Space;    // 타이핑 효과를 스킵하는 키
-  
+	[SerializeField]
+	private AudioSource audioSource;
 
     private	int					currentIndex = -1;
 	private	bool				isTypingEffect = false;			// 텍스트 타이핑 효과를 재생중인지
-	private	Speaker				currentSpeaker = Speaker.MI;
+	private	Speaker				currentSpeaker = Speaker.Kim;
 
 	public void Setup()
 	{
@@ -96,7 +97,8 @@ public class DialogSystem : MonoBehaviour
 
 		// 화자의 대사 텍스트 활성화 및 설정 (Typing Effect)
 		textDialogues[(int)currentSpeaker].gameObject.SetActive(true);
-		StartCoroutine(nameof(TypingText));
+        PlayVoice(dialogs[currentIndex].voiceClip);
+        StartCoroutine(nameof(TypingText));
 	}
 
 	private void InActiveObjects(int index)
@@ -112,7 +114,6 @@ public class DialogSystem : MonoBehaviour
 		int index = 0;
 		
 		isTypingEffect = true;
-        // 텍스트를 한글자씩 타이핑치듯 재생
         while ( index < dialogs[currentIndex].dialogue.Length )
 		{
 			textDialogues[(int)currentSpeaker].text = dialogs[currentIndex].dialogue.Substring(0, index);
@@ -124,10 +125,23 @@ public class DialogSystem : MonoBehaviour
 
 		isTypingEffect = false;
 
-		// 대사가 완료되었을 때 출력되는 커서 활성화
 		objectArrows[(int)currentSpeaker].SetActive(true);
 	}
-   
+    private void PlayVoice(AudioClip clip)
+    {
+        if (audioSource == null)
+        {
+            
+            return;
+        }
+
+        if (clip != null) 
+        {
+            audioSource.Stop();
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
+    }
 }
 
 [System.Serializable]
@@ -136,5 +150,6 @@ public struct Dialog
 	public	Speaker		speaker;	// 화자
 	[TextArea(3, 5)]
 	public	string		dialogue;   // 대사
+    public AudioClip voiceClip; //오디오
 }
 
