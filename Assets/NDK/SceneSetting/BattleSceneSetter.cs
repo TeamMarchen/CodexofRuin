@@ -21,13 +21,13 @@ public class BattleSceneSetter : SceneSetter
 
         GameObject stageManagerObj = Instantiate(_stageManager);
         SpecDataManager specDataManager = SpecDataManager.Instance;
-        PlayerStatus.Instance.Initialize(specDataManager.GetDataDictionary<PlayerDataSO>());
-        
-        
         GameObject playerHudObj = Instantiate(_playerHud);
         if (playerHudObj.TryGetComponent(out SkillUI skillUI))
         {
             skillUI.Initialize();
+            PlayerStatus.Instance.curruntHp = PlayerStatus.Instance.hp;
+            PlayerStatus.Instance.curruntMp = PlayerStatus.Instance.mp;
+            PlayerStatus.Instance.curruntExp = 0;
             
             PlayerStatus.Instance.OnLevelUp += skillUI.Unlock;
             //PlayerStatus.Instance.OnHealthChanged += skillUI.OnHealthChanged;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//ÇÁ·Ñ·Î±×¿¡¼­ Ä³¸¯ÅÍ ¼±ÅÃ UI¿¡¼­ÀÇ ¾À ³Ñ±â±â
+//ï¿½ï¿½ï¿½Ñ·Î±×¿ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ñ±ï¿½ï¿½
 public class TutorialCharacterSelectScene : MonoBehaviour
 {
     public void OnClickStart()
@@ -25,10 +25,12 @@ public class TutorialCharacterSelectScene : MonoBehaviour
     }
     public void Ending()
     {
+        SoundManager.Instance.Play("SFX_Scifi_Loading_Screen");
         Invoke("EndingCredit", 1f);
     }
     public void EndingCredit()
     {
+        SoundManager.Instance.StopBGM();
         SceneManager.LoadScene("StartScene");
     }
 }
