@@ -97,11 +97,11 @@ namespace Player
             rb.MovePosition(rb.position + movement);
             if (moveInput.x > 0)
             {
-                spriteRenderer.flipX = true;
+                transform.rotation = Quaternion.Euler(0, 180, 0);
             }
             else
             {
-                spriteRenderer.flipX = false;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
 
@@ -170,7 +170,6 @@ namespace Player
                     UpdateSecSkillCooldownUI();
                     yield return null;
                 }
-                yield return new WaitForSeconds(30f);
                 isSkillSecOnCooldown = false;
             }
         }

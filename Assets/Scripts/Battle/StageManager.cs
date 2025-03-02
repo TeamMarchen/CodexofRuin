@@ -270,7 +270,6 @@ public class StageManager : Singleton<StageManager>
         monsterSpawner.ClearAllMonsters();
         UpdateTimerUI(0);
 
-        Time.timeScale = 0;
         Debug.Log("스테이지 실패! 게임 오버.");
     }
 }
