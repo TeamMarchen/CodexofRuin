@@ -20,7 +20,7 @@ public abstract class SceneSetter : MonoBehaviour
         SpecDataManager.Instance.Init();
         PlayerPropertyManager.Instance.Init();
         UIManager.Instance.Init();
-        SoundManager.Instance.GetAudio += ResourceManager.Instance.LoadResource<AudioClip>;
+        SoundManager.Instance.Init(ResourceManager.Instance.LoadResource<AudioClip>);
         IsSingletonInitialze = true;
     }
 

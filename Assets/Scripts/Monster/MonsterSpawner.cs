@@ -14,7 +14,7 @@ public class MonsterSpawner : MonoBehaviour
     public float spawnIncreaseInterval = 5f;
     private int currentSpawnCount = 1;
     private int totalSpawnedMonsters = 0;
-    private int killedMonsters = 0;
+    public int killedMonsters = 0;
 
     [Header("Monster Spawn Limit")]
     public int maxMonsters = 2000;
@@ -99,7 +99,7 @@ public class MonsterSpawner : MonoBehaviour
         while (isSpawning && !bossSpawned)
         {
             yield return new WaitForSeconds(spawnIncreaseInterval);
-            currentSpawnCount += 5;
+            currentSpawnCount += 2;
         }
     }
 

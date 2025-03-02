@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 301
   wave: 1
-  monsterSpawnRate: 0500000003000000
+  monsterSpawnRate: 0200000001000000
   monsterType:
   - Didi
   - Ridi
   bossType: Bai Hayeon
   element: 4
   timeLimit: 150
-  maxMonsterSpawnCount: 2000
+  maxMonsterSpawnCount: 800
   bossClearTime: 90

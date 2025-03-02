@@ -29,8 +29,10 @@ namespace Player
         private Rigidbody2D rb;
         public MagicBullet magicBullet;
         public GameObject fireSkill;
+        public GameObject fireSkill2;
         private ObjectPool<MagicBullet> magicBulletPool;
         private bool isSkillFirOnCooldown = false;
+        private bool isSkillSecOnCooldown = false;
         private float skillFirCooldownTime = 15f;
         public float remainingFirCooldownTime = 0f;
         private float skillSecCooldownTime = 15f;
@@ -54,6 +56,7 @@ namespace Player
 
         private void Update()
         {
+            moveSpeed = PlayerStatus.Instance.speed;
             HandleInput();
             UpdateHealthAndManaUI();
             UpdateFirSkillCooldownUI();
@@ -140,7 +143,7 @@ namespace Player
         {
             if (PlayerStatus.Instance.level >= 3)
             {
-                if (isSkillFirOnCooldown) yield break;
+                if (isSkillSecOnCooldown) yield break;
 
                 if (PlayerStatus.Instance.curruntMp < 20)
                 {
@@ -148,11 +151,11 @@ namespace Player
                 }
 
                 PlayerStatus.Instance.curruntMp -= 20;
-                isSkillFirOnCooldown = true;
+                isSkillSecOnCooldown = true;
                 remainingSecCooldownTime = skillSecCooldownTime;
-                fireSkill.SetActive(true);
-                yield return new WaitForSeconds(2f);
-                fireSkill.SetActive(false);
+                fireSkill2.SetActive(true);
+                yield return new WaitForSeconds(5f);
+                fireSkill2.SetActive(false);
 
                 while (remainingSecCooldownTime > 0)
                 {
@@ -160,8 +163,8 @@ namespace Player
                     UpdateSecSkillCooldownUI();
                     yield return null;
                 }
-                yield return new WaitForSeconds(13f);
-                isSkillFirOnCooldown = false;
+                yield return new WaitForSeconds(30f);
+                isSkillSecOnCooldown = false;
             }
         }
 
