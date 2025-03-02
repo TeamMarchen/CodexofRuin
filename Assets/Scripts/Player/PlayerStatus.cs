@@ -84,19 +84,21 @@ public class PlayerStatus : Singleton<PlayerStatus>,IStatus
 
     public void LevelUp()
     {
-        
-        playerName = levelUpData[1001 + level].name;
-        hp = levelUpData[1001+level].hp;
-        curruntHp = hp;
-        baseDamage = levelUpData[1001 + level].attack;
-        mp = levelUpData[1001 + level].mp;
-        curruntMp = mp;
-        attackTime = 0.5f;
-        curruntExp -= maxExp;
-        defense = levelUpData[1001 + level].defense;
-        level = levelUpData[1001 + level].level;
-        maxExp = level * 2 *1000;
-        OnLevelUp?.Invoke(level);
-        OnExpChanged?.Invoke(curruntExp);
+        if (level <5)
+        {
+            playerName = levelUpData[1001 + level].name;
+            hp = levelUpData[1001 + level].hp;
+            curruntHp = hp;
+            baseDamage = levelUpData[1001 + level].attack;
+            mp = levelUpData[1001 + level].mp;
+            curruntMp = mp;
+            attackTime = 0.5f;
+            curruntExp -= maxExp;
+            defense = levelUpData[1001 + level].defense;
+            level = levelUpData[1001 + level].level;
+            maxExp = level * 2 * 1000;
+            OnLevelUp?.Invoke(level);
+            OnExpChanged?.Invoke(curruntExp);
+        }
     }
 }

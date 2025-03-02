@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 using Player;
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 public class StageManager : Singleton<StageManager>
 {
     [Header("Stage Settings")]
-    public int totalStages = 3;
+    public int totalStages = 1;
     private float STAGETIME = 150f;
     private float BOSSTIME = 150f;
     private float RESTTIME = 10f;
@@ -36,6 +37,9 @@ public class StageManager : Singleton<StageManager>
     [SerializeField]
     private CameraManager camera;
 
+    public GameObject readerSkill;
+    public GameObject reader;
+
     private int totalMonstersToKill = 2000;
     private int killedMonsters = 0;
     private bool bossDefeated = false;
@@ -53,6 +57,9 @@ public class StageManager : Singleton<StageManager>
     public void Initialize(IReadOnlyDictionary<int, MonsterDataSO> monsterDataSos_, IReadOnlyDictionary<int, CharacterDataSO> characterDataSos_,
         StageDataSO stageDataSos_, IReadOnlyDictionary<int, PlayerDataSO> playerDataSos_, Image skill1, Image skill2, Image skill3, Image hp)
     {
+        reader = Instantiate(readerSkill, new Vector3(0, 0, 0), Quaternion.identity);
+        reader.name = "ReaderSkill";
+        reader.SetActive(false);
         playerObject = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
         playerController = playerObject.GetComponent<PlayerController>();
 
@@ -173,6 +180,7 @@ public class StageManager : Singleton<StageManager>
         {
             Debug.Log("모든 스테이지가 완료되었습니다!");
             UpdateTimerUI(0);
+            SceneManager.LoadScene("EndingScene");
         }
     }
 
@@ -180,14 +188,37 @@ public class StageManager : Singleton<StageManager>
     {
         isSkillActivated = true;
         Time.timeScale = 0f;
-        skillSelectionPanel.SetActive(true);
-        Debug.Log("플레이어 고유 스킬 발동! 선택지를 표시합니다.");
+        reader.SetActive(true);
     }
 
-    public void OnSkillSelected()
+    public void OnSkillSelected(int selectSkill)
     {
-        skillSelectionPanel.SetActive(false);
-        StartCoroutine(ShowCharacterFullImageRoutine());
+        Debug.Log(selectSkill);
+        switch (selectSkill)
+        {
+            case 0: break;
+            case 1: PlayerStatus.Instance.speed += 2f; break;
+            case 2:  break;
+            case 3: PlayerStatus.Instance.curruntHp += PlayerStatus.Instance.hp * 0.1f; break;
+        }
+        if (reader != null)
+        {
+            Destroy(reader);
+            reader = null;
+        } else
+        {
+            GameObject readerSkillCanvas = GameObject.Find("ReaderSkill");
+            if (readerSkillCanvas != null)
+            {
+                Destroy(readerSkillCanvas);
+                Debug.Log("ReaderSkill Canvas 파괴됨");
+            }
+            else
+            {
+                Debug.LogWarning("ReaderSkill Canvas를 찾을 수 없습니다.");
+            }
+        }
+        //StartCoroutine(ShowCharacterFullImageRoutine());
         Time.timeScale = 1f;
     }
 

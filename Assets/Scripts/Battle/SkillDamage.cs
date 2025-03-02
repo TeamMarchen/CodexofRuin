@@ -4,16 +4,40 @@ using UnityEngine;
 
 public class SkillDamage : MonoBehaviour
 {
+    private Coroutine damageCoroutine;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Monster"))
         {
-            Monster monster = collision.GetComponent<Monster>();
-            if (monster != null)
+            damageCoroutine = StartCoroutine(ApplyDamageOverTime(collision));
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Monster"))
+        {
+            if (damageCoroutine != null)
             {
-                Debug.Log("");
-                monster.TakeDamage(500);
+                StopCoroutine(damageCoroutine);
+                damageCoroutine = null;
             }
         }
+    }
+
+    private IEnumerator ApplyDamageOverTime(Collider2D target)
+    {
+        while (true)
+        {
+            // 초당 지속 데미지 적용
+            Monster monster = target.GetComponent<Monster>();
+            if (monster != null)
+            {
+                monster.TakeDamage(PlayerStatus.Instance.level * 40);
+            }
+
+            yield return new WaitForSeconds(1f); // 1초마다 데미지 적용
+        }
+
     }
 }
