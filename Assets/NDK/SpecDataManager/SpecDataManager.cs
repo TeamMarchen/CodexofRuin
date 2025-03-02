@@ -86,6 +86,32 @@ public class SpecDataManager : Singleton<SpecDataManager>
 
     private Enums.SPEC_DATA_TYPE GetSpecDataType(Type t)
     {
+        //NONE = 0, STAGE_DATA, MONSTER_DATA, CHARACTER_DATA, PLAYER_SKILL_DATA, FEDERATION_SKILL_DATA, FEDERATION_DATA, PLAYER_DATA, ITEM_DATA,
+        if (t == typeof(StageDataSO))
+        {
+            return Enums.SPEC_DATA_TYPE.STAGE_DATA;
+        }else if (t == typeof(MonsterDataSO))
+        {
+            return Enums.SPEC_DATA_TYPE.MONSTER_DATA;
+        }else if (t == typeof(CharacterDataSO))
+        {
+            return Enums.SPEC_DATA_TYPE.CHARACTER_DATA;
+        }else if (t == typeof(PlayerSkillSO))
+        {
+            return Enums.SPEC_DATA_TYPE.PLAYER_SKILL_DATA;
+        }else if (t == typeof(FederationSkillSO))
+        {
+            return Enums.SPEC_DATA_TYPE.FEDERATION_SKILL_DATA;   
+        }else if (t == typeof(FederationDataSO))
+        {
+            return Enums.SPEC_DATA_TYPE.FEDERATION_DATA;
+        }else if (t == typeof(PlayerDataSO))
+        {
+            return Enums.SPEC_DATA_TYPE.PLAYER_DATA;
+        }else if (t == typeof(ItemDataSO))
+        {
+            return Enums.SPEC_DATA_TYPE.ITEM_DATA;
+        }
         // if (t == typeof(CharacterData))
         // {
         //     return Enums.SPEC_DATA_TYPE.CharacterSpecData;

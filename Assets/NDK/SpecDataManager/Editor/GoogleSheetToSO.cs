@@ -81,7 +81,7 @@ public class GoogleSheetToSO : EditorWindow
     {
         string[] line = csv.Split('\n');
         
-        string fullPath = Path.Combine(Const.String.Path.SO, folderNamePath);
+        string fullPath = Path.Combine(Const.String.Path.SOFullPath, folderNamePath);
         if (!Directory.Exists(fullPath))
         {
             Directory.CreateDirectory(fullPath);

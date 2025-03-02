@@ -14,7 +14,8 @@ namespace Const
 
             //
             public const string Resources = "Assets/_Projects/Resources";
-            public const string SO = Resources + "/ScriptableObjects";
+            public const string SOFullPath = Resources + "/ScriptableObjects";
+            public const string SO = "ScriptableObjects";
             public const string STAGE_DATA_PATH = SO+"/StageData";
             public const string MONSTER_DATA_PATH = SO + "/MonsterData";
             public const string CHARACTER_DATA_PATH = SO + "/CharacterData";
