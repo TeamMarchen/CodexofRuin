@@ -124,6 +124,7 @@ namespace Player
 
                 PlayerStatus.Instance.curruntMp -= 20;
                 isSkillFirOnCooldown = true;
+                SoundManager.Instance.Play("SFX_PenClick");
                 remainingFirCooldownTime = skillFirCooldownTime;
                 fireSkill.SetActive(true);
                 yield return new WaitForSeconds(2f);
@@ -141,7 +142,7 @@ namespace Player
 
         private IEnumerator SkillSec()
         {
-            if (PlayerStatus.Instance.level >= 3)
+            if (PlayerStatus.Instance.level >= 1)
             {
                 if (isSkillSecOnCooldown) yield break;
 
@@ -152,6 +153,7 @@ namespace Player
 
                 PlayerStatus.Instance.curruntMp -= 20;
                 isSkillSecOnCooldown = true;
+                SoundManager.Instance.Play("SFX_PenClick");
                 remainingSecCooldownTime = skillSecCooldownTime;
                 fireSkill2.SetActive(true);
                 yield return new WaitForSeconds(5f);
@@ -172,6 +174,7 @@ namespace Player
         {
             if (skillThrCooldownFill.fillAmount != 1)
             {
+                SoundManager.Instance.Play("SFX_PenClick");
                 skillThrCooldownFill.fillAmount = 1;
                 PlayerStatus.Instance.extraAttackPower += 150;
                 yield return null;
