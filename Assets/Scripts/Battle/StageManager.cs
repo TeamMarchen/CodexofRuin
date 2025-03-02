@@ -33,8 +33,6 @@ public class StageManager : Singleton<StageManager>
     private GameObject spawner;
     private GameObject spawnerObject;
 
-    
-
     [SerializeField]
     private CameraManager camera;
 
@@ -53,7 +51,7 @@ public class StageManager : Singleton<StageManager>
     private IReadOnlyDictionary<int, MonsterDataSO> monsterData;
 
     public void Initialize(IReadOnlyDictionary<int, MonsterDataSO> monsterDataSos_, IReadOnlyDictionary<int, CharacterDataSO> characterDataSos_,
-        StageDataSO stageDataSos_, IReadOnlyDictionary<int, PlayerDataSO> playerDataSos_)
+        StageDataSO stageDataSos_, IReadOnlyDictionary<int, PlayerDataSO> playerDataSos_, Image skill1, Image skill2, Image skill3, Image hp)
     {
         playerObject = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
         spawnerObject = Instantiate(spawner, new Vector3(0, 0, 0), Quaternion.identity);
@@ -89,6 +87,8 @@ public class StageManager : Singleton<StageManager>
         totalMonstersToKill = stageDataSos_.maxMonsterSpawnCount;
 
         playerController = playerObject.GetComponent<PlayerController>();
+
+        playerController.Initialize(skill1, skill2, skill3,hp);
 
         camera.Setting(playerObject);
 

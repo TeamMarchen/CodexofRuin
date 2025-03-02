@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerStatus : Singleton<PlayerStatus>,IStatus
 {
     public int level { get; set; }
@@ -64,7 +63,7 @@ public class PlayerStatus : Singleton<PlayerStatus>,IStatus
         speed = 3f;
         curruntHp = hp;
         baseDamage = playerDataSos_[1001].attack;
-        extraAttackPower = 0;
+        extraAttackPower = 50;
         mp = playerDataSos_[1001].mp;
         curruntMp = mp;
         attackTime = 0.5f;
@@ -73,6 +72,14 @@ public class PlayerStatus : Singleton<PlayerStatus>,IStatus
         defense = playerDataSos_[1001].defense;
         levelUpData = playerDataSos_;
         Debug.Log("초기화");
+    }
+
+    private void Update()
+    {
+        if (curruntExp >= maxExp)
+        {
+            LevelUp();
+        }
     }
 
     public void LevelUp()
@@ -85,7 +92,7 @@ public class PlayerStatus : Singleton<PlayerStatus>,IStatus
         mp = levelUpData[1001 + level].mp;
         curruntMp = mp;
         attackTime = 0.5f;
-        curruntExp = 0;
+        curruntExp -= maxExp;
         defense = levelUpData[1001 + level].defense;
         level = levelUpData[1001 + level].level;
         maxExp = level * 2 *1000;
