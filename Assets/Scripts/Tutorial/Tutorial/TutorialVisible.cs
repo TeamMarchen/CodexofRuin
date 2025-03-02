@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public struct Object
+public struct TestObject
 {
 	public GameObject visibleObject;
 	public bool		  visible;
@@ -10,7 +10,7 @@ public struct Object
 public class TutorialVisible : TutorialBase
 {
 	[SerializeField]
-	private	Object[]	objects;
+	private	TestObject[]	objects;
 
 	public override void Enter()
 	{

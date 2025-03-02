@@ -5,6 +5,11 @@ public interface IDamage
 {
     void TakeDamage(float damage);
 }
+
+namespace Player
+{
+    
+}
 public class PlayerController : MonoBehaviour, IDamage
 {
     [Header("Movement Settings")]

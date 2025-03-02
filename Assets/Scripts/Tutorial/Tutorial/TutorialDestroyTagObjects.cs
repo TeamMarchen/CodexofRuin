@@ -3,7 +3,7 @@
 public class TutorialDestroyTagObjects : TutorialBase
 {
 	[SerializeField]
-	private	PlayerController	playerController;
+	private	TestPlayerController	playerController;
 	[SerializeField]
 	private	GameObject[]		objectList;
 	[SerializeField]

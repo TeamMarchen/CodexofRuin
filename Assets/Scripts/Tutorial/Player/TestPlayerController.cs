@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class TestPlayerController : MonoBehaviour
 {
 	[SerializeField]
 	private	KeyCode		keyCodeFire = KeyCode.Space;
@@ -9,20 +9,20 @@ public class PlayerController : MonoBehaviour
 	private	float		moveSpeed = 3;
 	private	Vector3		lastMoveDirection = Vector3.right;
 
-	public	bool		IsMoved		{ set; get; } = false;	// ÀÌµ¿ °¡´É ¿©ºÎ
-	public	bool		IsAttacked	{ set; get; } = false;	// °ø°Ý °¡´É ¿©ºÎ
+	public	bool		IsMoved		{ set; get; } = false;	// ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public	bool		IsAttacked	{ set; get; } = false;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 	private void Update()
 	{
 		if ( IsMoved == true )
 		{
-			// ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ® ÀÌµ¿
+			// ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ìµï¿½
 			float x = Input.GetAxisRaw("Horizontal");
 			float y = Input.GetAxisRaw("Vertical");
 
 			transform.position += new Vector3(x, y, 0) * moveSpeed * Time.deltaTime;
 
-			// ¸¶Áö¸·¿¡ ÀÔ·ÂµÈ ¹æÇâÅ°ÀÇ ¹æÇâÀ» ÃÑ¾ËÀÇ ¹ß»ç ¹æÇâÀ¸·Î È°¿ë
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Âµï¿½ ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½
 			if ( x != 0 || y != 0 )
 			{
 				lastMoveDirection = new Vector3(x, y, 0);
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
 		if ( IsAttacked == true )
 		{
-			// ½ºÆäÀÌ½º Å°¸¦ ´­·¯ ¹ß»çÃ¼ »ý¼º
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
 			if ( Input.GetKeyDown(keyCodeFire) )
 			{
 				GameObject clone = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
