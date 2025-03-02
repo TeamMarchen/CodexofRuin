@@ -50,7 +50,7 @@ public class BattleSceneSetter : SceneSetter
         }
 
         GameObject mapObj = Instantiate(_map);
-        
+        SoundManager.Instance.Play("");
     }
 
     private void OnDisable()
