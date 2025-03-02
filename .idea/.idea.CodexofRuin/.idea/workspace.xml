@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="715cf415-4136-4f76-8bdc-211ae9815888" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/NDK/Prefab/Map1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NDK/Prefab/Map1.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CodexofRuin/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NDK/Global/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/Global/Enums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneSetting/MainSceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/MainSceneSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneSetting/BattleSceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/BattleSceneSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneSetting/LobbySceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/LobbySceneSetter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NDK/SceneSetting/SceneSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NDK/SceneSetting/SceneSetter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MapScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MapScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/StageManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +111,7 @@
       <workItem from="1740834748866" duration="941000" />
       <workItem from="1740881707560" duration="9598000" />
       <workItem from="1740895921779" duration="699000" />
-      <workItem from="1740899339342" duration="3144000" />
+      <workItem from="1740899339342" duration="3771000" />
     </task>
     <servers />
   </component>

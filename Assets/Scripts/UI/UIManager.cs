@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
-    public static UIManager Instance { get; private set; }
-
     public event Action<int> OnGoldChanged;
     public event Action<int> OnCashChanged;
 
@@ -14,19 +12,8 @@ public class UIManager : MonoBehaviour
     private int cash;
     public string userName;
     private bool isInitialized = false;
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    private void Start()
+    
+    public void Init()
     {
         if (!isInitialized)
         {

@@ -44,7 +44,7 @@ public class StageManager : Singleton<StageManager>
     private List<int> monsterId;
     private IReadOnlyDictionary<int, MonsterDataSO> monsterData;
 
-    private void Initialize(IReadOnlyDictionary<int, MonsterDataSO> monsterDataSos_, IReadOnlyDictionary<int, CharacterDataSO> characterDataSos_, 
+    public void Initialize(IReadOnlyDictionary<int, MonsterDataSO> monsterDataSos_, IReadOnlyDictionary<int, CharacterDataSO> characterDataSos_, 
         StageDataSO stageDataSos_, IReadOnlyDictionary<int, PlayerDataSO> playerDataSos_)
     {
         playerObject = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
