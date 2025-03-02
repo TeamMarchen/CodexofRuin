@@ -17,6 +17,6 @@ MonoBehaviour:
   level: 5
   hp: 1800
   attack: 180
-  defense: 90
+  defense: 50
   mp: 280
   playerImagePath: _Player
