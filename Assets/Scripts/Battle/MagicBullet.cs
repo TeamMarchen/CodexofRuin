@@ -48,7 +48,6 @@ public class MagicBullet : MonoBehaviour
             if (monster != null)
             {
                 monster.TakeDamage(damage);
-                Debug.Log($"몬스터에게 {damage} 피해를 입혔습니다.");
             }
             gameObject.SetActive(false);
         }
@@ -63,7 +62,6 @@ public class MagicBullet : MonoBehaviour
                     if (monster != null)
                     {
                         monster.TakeDamage(damage);
-                        Debug.Log($"범위 내 몬스터에게 {damage} 피해를 입혔습니다.");
                     }
                 }
             }
