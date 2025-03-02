@@ -11,12 +11,12 @@ public class SkillUI : MonoBehaviour
     [SerializeField] private GameObject _skillButton2;
     [SerializeField] private GameObject _skillButton3;
 
-    [SerializeField] private Image _healthGauge;
+    [SerializeField] public Image _healthGauge;
     [SerializeField] private Image _expGauge;
     [SerializeField] private Image _mpGauge;
-    [SerializeField] private Image _skill1CoolTime;
-    [SerializeField] private Image _skill2CoolTime;
-    [SerializeField] private Image _skill3CoolTime;
+    [SerializeField] public Image _skill1CoolTime;
+    [SerializeField] public Image _skill2CoolTime;
+    [SerializeField] public Image _skill3CoolTime;
 
     //나중에 스킬 넣을 수 있도록 수정하기
     public void Initialize()
